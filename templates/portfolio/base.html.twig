@@ -16,7 +16,9 @@
 
 <body class="d-flex">
 <header>
-    {% include('components/_navbar.html.twig') %}
+    {{ render(controller(
+        'App\\Controller\\PortfolioController::navbar', {'page': page}
+    )) }}
 </header>
 <main>
     {% block body %}{% endblock %}

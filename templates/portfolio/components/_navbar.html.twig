@@ -5,9 +5,9 @@
             <span class="icon {{ page == 'index' ? 'icon-active' : '' }}"><i class="fas fa-home"></i></span>
             <span class="text">Accueil</span>
         </a>
-        <a href="{{ path('info') }}">
-            <span class="icon {{ page == 'info' ? 'icon-active' : '' }}"><i class="fas fa-user-tie"></i></span>
-            <span class="text">Info</span>
+        <a href="{{ path('infos') }}">
+            <span class="icon {{ page == 'infos' ? 'icon-active' : '' }}"><i class="fas fa-user-tie"></i></span>
+            <span class="text">Infos</span>
         </a>
         <a href="{{ path('skills') }}">
             <span class="icon {{ page == 'skills' ? 'icon-active' : '' }}"><i class="fas fa-tools"></i></span>
@@ -23,10 +23,10 @@
         </a>
     </div>
     <div id="navbar-link">
-        <a href="https://www.linkedin.com/in/guillaumeerpeldinger/" target="_blank">
+        <a href="{{ linkedIn }}" target="_blank">
             <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="https://github.com/Nighter33" target="_blank">
+        <a href="{{ github }}" target="_blank">
             <i class="fab fa-github"></i>
         </a>
     </div>

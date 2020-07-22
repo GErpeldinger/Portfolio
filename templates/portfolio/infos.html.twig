@@ -1,0 +1,23 @@
+{% extends 'portfolio/base.html.twig' %}
+
+{% block title 'Informations - Guillaume Erpeldinger' %}
+
+{% block body %}
+    <div class="d-flex justify-content-center pt-5 overflow-scroll">
+        <div class="container">
+            <h1>À mon sujet...</h1>
+            <h4>J'ai {{ admin.age }}ans et je suis de {{ admin.city }}.</h4>
+            <p>{{ admin.resume | raw }}</p>
+
+            <div class="d-none d-md-block">
+                {{ render(controller('App\\Controller\\PortfolioController::timeline')) }}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('timeline') }}
+{% endblock %}

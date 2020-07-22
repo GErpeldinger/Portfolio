@@ -13,6 +13,26 @@ main {
     min-height: 100vh;
 }
 
+h1 {
+    color: $white;
+    font-variant-caps: small-caps;
+    font-family: $mali;
+}
+
+h2 {
+    color: $wild;
+    font-variant-caps: small-caps;
+    font-family: $mali;
+}
+
+h4 {
+    color: $wild;
+}
+
+em {
+    color: $white;
+}
+
 p {
     font-family: $dosis;
     color: $white;
@@ -40,4 +60,9 @@ p {
 
 .small-caps {
     font-variant-caps: small-caps;
+}
+
+.overflow-scroll {
+    max-height: 100vh;
+    overflow-y: scroll;
 }

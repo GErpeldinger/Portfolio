@@ -1,0 +1,71 @@
+<section id="timeline">
+    <div class="cd-horizontal-timeline">
+        <div class="timeline">
+            <div class="events-wrapper">
+                <div class="events">
+                    <ol>
+                        {% for event in events %}
+                            <li>
+                                <a href="#0"
+                                   data-date="{{ dateList | date('d/m/y') }}"
+                                   class="{{ loop.index == 1 ? 'selected' : '' }}">{{ event.label }}</a>
+                            </li>
+                            {% if loop.index == 1 %}
+                                {% set dateList = dateList | date_modify('+6 year') %}
+                            {% elseif loop.index == 4 %}
+                                {% set dateList = dateList | date_modify('+3 year') %}
+                            {% else %}
+                                {% set dateList = dateList | date_modify('+1 year') %}
+                            {% endif %}
+                        {% endfor %}
+                    </ol>
+
+                    <span class="filling-line" aria-hidden="true"></span>
+                </div> <!-- .events -->
+            </div> <!-- .events-wrapper -->
+
+            <ul class="cd-timeline-navigation">
+                <li><a href="#0" class="prev inactive">Prev</a></li>
+                <li><a href="#0" class="next">Next</a></li>
+            </ul> <!-- .cd-timeline-navigation -->
+        </div> <!-- .timeline -->
+
+        <div class="events-content">
+            <ol>
+                {% for event in events %}
+                    <li class="{{ loop.index == 1? 'selected' : '' }}"
+                        data-date="{{ dateInfo | date('d/m/y') }}">
+                        <h2>{{ event.title }}</h2>
+                        <em>
+                            {{ event.endDate ? 'Du ' : '' }}
+                            {% if event.noMonth %}
+                                {{ event.startDate | date('Y') }}
+                            {% elseif event.noDay %}
+                                {{ event.startDate | format_date(pattern='MMMM Y', locale='fr') }}
+                            {% else %}
+                                {{ event.startDate | format_date('long', locale='fr') }}
+                            {% endif %}
+                            {% if event.endDate %}
+                                {% if event.noMonth %}
+                                    jusqu'à {{ event.endDate | date('Y') }}
+                                {% elseif event.noDay %}
+                                    jusqu'à {{ event.endDate | format_date(pattern='MMMM Y', locale='fr') }}
+                                {% else %}
+                                    jusqu'au {{ event.endDate | format_date('long', locale='fr') }}
+                                {% endif %}
+                            {% endif %}
+                        </em>
+                        <p>{{ event.description | raw }}</p>
+                    </li>
+                    {% if loop.index == 1 %}
+                        {% set dateInfo = dateInfo | date_modify('+6 year') %}
+                    {% elseif loop.index == 4 %}
+                        {% set dateInfo = dateInfo | date_modify('+3 year') %}
+                    {% else %}
+                        {% set dateInfo = dateInfo | date_modify('+1 year') %}
+                    {% endif %}
+                {% endfor %}
+            </ol>
+        </div> <!-- .events-content -->
+    </div>
+</section>
