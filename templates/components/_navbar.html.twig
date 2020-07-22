@@ -1,0 +1,33 @@
+<nav id="navbar">
+    <img src="{{ asset('/build/images/Avatar.jpg') }}" alt="">
+    <div id="navbar-menu">
+        <a href="{{ path('index') }}">
+            <span class="icon {{ page == 'index' ? 'icon-active' : '' }}"><i class="fas fa-home"></i></span>
+            <span class="text">Accueil</span>
+        </a>
+        <a href="{{ path('info') }}">
+            <span class="icon {{ page == 'info' ? 'icon-active' : '' }}"><i class="fas fa-user-tie"></i></span>
+            <span class="text">Info</span>
+        </a>
+        <a href="{{ path('skills') }}">
+            <span class="icon {{ page == 'skills' ? 'icon-active' : '' }}"><i class="fas fa-tools"></i></span>
+            <span class="text">Skills</span>
+        </a>
+        <a href="{{ path('projects') }}">
+            <span class="icon {{ page == 'projects' ? 'icon-active' : '' }}"><i class="fas fa-eye"></i></span>
+            <span class="text">Projets</span>
+        </a>
+        <a href="mailto:erpeldinger.g@gmail.com">
+            <span class="icon"><i class="fas fa-envelope"></i></span>
+            <span class="text">Contact</span>
+        </a>
+    </div>
+    <div id="navbar-link">
+        <a href="https://www.linkedin.com/in/guillaumeerpeldinger/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/Nighter33" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+</nav>

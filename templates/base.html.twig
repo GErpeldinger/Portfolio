@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Portfolio - Guillaume Erpeldinger{% endblock %}</title>
+    <meta name="author" content="Erpeldinger Guillaume">
+    <meta name="description" content="Portfolio de Guillaume Erpeldinger">
+    <meta name="keywords" content="Portfolio, Guillaume, Erpeldinger">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+
+<body class="d-flex">
+<header>
+    {% include('components/_navbar.html.twig') %}
+</header>
+<main>
+    {% block body %}{% endblock %}
+</main>
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
+
 </html>

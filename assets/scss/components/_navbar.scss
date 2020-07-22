@@ -1,0 +1,65 @@
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#navbar {
+    min-height: 100vh;
+    @include flex-column;
+    justify-content: space-between;
+
+    img {
+        width: 80px;
+        height: 80px;
+        border-bottom: 1px solid black;
+    }
+
+    #navbar-menu {
+        @include flex-column;
+
+        a {
+            color: $white;
+            width: 80px;
+            height: 60px;
+            text-align: center;
+            font-size: 1.8rem;
+            transition: 1s ease-in-out;
+
+            .icon-active {
+                color: $wild;
+            }
+
+            .text {
+                display: none;
+            }
+
+            &:hover {
+                .icon {
+                    display: none;
+                }
+
+                .text {
+                    display: inline;
+                    font-size: 1rem;
+                    font-variant-caps: small-caps;
+                    color: $wild;
+                }
+            }
+        }
+    }
+
+    #navbar-link {
+        @include flex-column;
+        margin-bottom: 10px;
+
+        a {
+            font-size: 1.4rem;
+            color: $white;
+
+            &:hover {
+                color: $wild;
+            }
+        }
+    }
+}
