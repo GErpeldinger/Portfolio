@@ -13,7 +13,7 @@ class PortfolioController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('index.html.twig', [
+        return $this->render('portfolio/index.html.twig', [
             'page' => 'index',
         ]);
     }
@@ -23,7 +23,7 @@ class PortfolioController extends AbstractController
      */
     public function info(): Response
     {
-        return $this->render('info.html.twig', [
+        return $this->render('portfolio/info.html.twig', [
             'page' => 'info',
         ]);
     }
@@ -33,7 +33,7 @@ class PortfolioController extends AbstractController
      */
     public function skills(): Response
     {
-        return $this->render('skills.html.twig', [
+        return $this->render('portfolio/skills.html.twig', [
             'page' => 'skills',
         ]);
     }
@@ -43,7 +43,7 @@ class PortfolioController extends AbstractController
      */
     public function projects(): Response
     {
-        return $this->render('projects.html.twig', [
+        return $this->render('portfolio/projects.html.twig', [
             'page' => 'projects',
         ]);
     }

@@ -7,3 +7,37 @@ header {
     min-height: 100vh;
     border-right: 1px solid black;
 }
+
+main {
+    min-width: calc(100% - 80px);
+    min-height: 100vh;
+}
+
+p {
+    font-family: $dosis;
+    color: $white;
+}
+
+.text {
+    &-white {
+        color: $white !important;
+    }
+
+    &-wild {
+        color: $wild;
+    }
+}
+
+.font {
+    &-mali {
+        font-family: $mali;
+    }
+
+    &-dosis {
+        font-family: $dosis;
+    }
+}
+
+.small-caps {
+    font-variant-caps: small-caps;
+}
