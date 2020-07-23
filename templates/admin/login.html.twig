@@ -1,0 +1,26 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title 'Admin connexion' %}
+
+{% block body %}
+
+    {% if error %}
+        <div class="alert alert-danger text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <form method="post">
+            <h1 class="mb-3 text-wild text-center">Merci de vous connectez</h1>
+            <label for="inputEmail">Email</label>
+            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+            <label for="inputPassword">Password</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" required>
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <div class="d-flex justify-content-end mt-3">
+                <button class="btn btn-lg btn-wild" type="submit">Se connecter</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -8,6 +8,7 @@ use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class PortfolioController extends AbstractController
 {
@@ -96,10 +97,32 @@ class PortfolioController extends AbstractController
     }
 
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/login", name="admin_login")
+     * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
-    public function admin(): Response
+    public function admin_login(AuthenticationUtils $authenticationUtils): Response
+    {
+        if ($this->getUser()) {
+            return $this->redirectToRoute('admin_index');
+        }
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        return $this->render('admin/login.html.twig', [
+            'last_username' => $lastUsername,
+            'error' => $error
+        ]);
+    }
+
+    /**
+     * @Route("/admin", name="admin_index")
+     * @return Response
+     */
+    public function admin_panel(): Response
     {
         return $this->render('admin/index.html.twig');
     }

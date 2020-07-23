@@ -38,6 +38,14 @@ p, label, legend {
     color: $white;
 }
 
+a {
+    color: $wild;
+
+    &:hover {
+        color: $wild;
+    }
+}
+
 .text {
     &-white {
         color: $white !important;
