@@ -1,0 +1,19 @@
+{% extends('base.html.twig') %}
+
+{% block title %}{{ 'nouveau' in app.request.pathInfo ? 'Nouvelle' : 'Éditer' }} compétence{% endblock %}
+
+{% block body %}
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="col-12">
+            <h2 class="text-center">{{ 'nouveau' in app.request.pathInfo ? 'Nouvelle' : 'Éditer' }} compétence</h2>
+            {{ form_start(form) }}
+                {{ form_row(form.name) }}
+                {{ form_row(form.iconeFile) }}
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-wild" href="{{ path('project_list') }}">Retour aux compétences</a>
+                    <button class="btn btn-wild ml-2">Ajouter</button>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

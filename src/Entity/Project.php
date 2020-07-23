@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ProjectRepository;
 use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -39,7 +40,7 @@ class Project
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="project_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="project_image", fileNameProperty="image")
      * @var File
      */
     private $imageFile;
@@ -158,7 +159,7 @@ class Project
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->createdAt;
     }
@@ -174,7 +175,7 @@ class Project
         return $this;
     }
 
-    public function getUpdatedAt(): ?\DateTimeInterface
+    public function getUpdatedAt(): ?DateTimeInterface
     {
         return $this->updatedAt;
     }

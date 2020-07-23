@@ -1,6 +1,16 @@
 <nav id="navbar">
     <img src="{{ asset('build/images/Avatar.jpg') }}" alt="">
     <div id="navbar-menu">
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('admin_index') }}">
+                <span class="icon {{ page == 'admin' ? 'icon-active' : '' }}"><i class="fas fa-cog"></i></span>
+                <span class="text">Admin</span>
+            </a>
+            <a href="{{ path('admin_logout') }}">
+                <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                <span class="text">Logout</span>
+            </a>
+        {% endif %}
         <a href="{{ path('index') }}">
             <span class="icon {{ page == 'index' ? 'icon-active' : '' }}"><i class="fas fa-home"></i></span>
             <span class="text">Accueil</span>

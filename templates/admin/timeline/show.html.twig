@@ -1,0 +1,56 @@
+{% extends('base.html.twig') %}
+
+{% block title 'Évènement' %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between">
+            <a class="btn btn-wild" href="{{ path('timeline_list') }}">Retour aux évènements</a>
+            <a class="btn btn-wild" href="{{ path('timeline_edit', {'id': event.id}) }}">Modifier évènement</a>
+        </div>
+        <h2 class="text-center">Évènement</h2>
+        <div class="d-flex justify-content-center align-items-center mt-1">
+            <table class="table table-dark">
+                <tbody>
+                <tr>
+                    <th scope="row" class="text-center">Label</th>
+                    <td class="text-center">{{ event.label }}</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="text-center">Titre</th>
+                    <td class="text-center">{{ event.title }}</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="text-center">Début</th>
+                    <td class="text-center">
+                        {% if event.noMonth == true %}
+                            {{ event.startDate | date('Y') }}
+                        {% elseif event.noDay == true %}
+                            {{ event.startDate | date('m/Y') }}
+                        {% else %}
+                            {{ event.startDate | date('d/m/Y') }}
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="text-center">Fin</th>
+                    <td class="text-center">
+                        {% if event.noMonth == true %}
+                            {{ event.endDate | date('Y') }}
+                        {% elseif event.noDay == true %}
+                            {{ event.endDate | date('m/Y') }}
+                        {% else %}
+                            {{ event.endDate | date('d/m/Y') }}
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="text-center">Description</th scope="row">
+                    <td class="d-flex justify-content-center"><div>{{ event.description | raw }}</div></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

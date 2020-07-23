@@ -102,9 +102,10 @@ class PortfolioController extends AbstractController
     /**
      * @Route("/login", name="admin_login")
      * @param AuthenticationUtils $authenticationUtils
+     * @param AdminRepository $adminRepository
      * @return Response
      */
-    public function admin_login(AuthenticationUtils $authenticationUtils): Response
+    public function admin_login(AuthenticationUtils $authenticationUtils, AdminRepository $adminRepository): Response
     {
         if ($this->getUser()) {
             return $this->redirectToRoute('admin_index');
@@ -117,7 +118,8 @@ class PortfolioController extends AbstractController
 
         return $this->render('admin/login.html.twig', [
             'last_username' => $lastUsername,
-            'error' => $error
+            'error' => $error,
+            'admin' => $adminRepository->findOneBy([])
         ]);
     }
 

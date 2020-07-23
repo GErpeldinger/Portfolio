@@ -1,11 +1,11 @@
-{% extends('admin/base.html.twig') %}
+{% extends('base.html.twig') %}
 
-{% block title %}{{ 'nouveau' in app.request.pathInfo ? 'Nouvelle' : 'Editer' }} évènement{% endblock %}
+{% block title %}{{ 'nouveau' in app.request.pathInfo ? 'Nouvelle' : 'Éditer' }} évènement{% endblock %}
 
 {% block body %}
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="col-12">
-            <h2 class="text-center">{{ 'nouveau' in app.request.pathInfo ? 'Nouvelle' : 'Editer' }} évènement</h2>
+            <h2 class="text-center">{{ 'nouveau' in app.request.pathInfo ? 'Nouvelle' : 'Éditer' }} évènement</h2>
             {{ form_start(form) }}
                 {{ form_row(form.title) }}
                 {{ form_row(form.label) }}
@@ -19,7 +19,10 @@
                     {{ form_row(form.noMonth) }}
                 </div>
                 <div class="d-flex justify-content-end">
-                    <a class="btn btn-wild" href="{{ path('timeline_list') }}">Retour</a>
+                    <a class="btn btn-wild" href="{{ path('timeline_list') }}">Retour aux évènements</a>
+                    {% if 'edition' in app.request.pathInfo %}
+                        <a class="btn btn-wild ml-2" href="{{ path('timeline_show', {'id': event.id}) }}">Retour à l'évènement</a>
+                    {% endif %}
                     <button class="btn btn-wild ml-2">Ajouter</button>
                 </div>
             {{ form_end(form) }}

@@ -1,4 +1,4 @@
-{% extends('admin/base.html.twig') %}
+{% extends('base.html.twig') %}
 
 {% block title 'Panel d\'administration' %}
 
@@ -8,9 +8,8 @@
         <div class="d-flex">
             <a href="" class="box"><i class="fas fa-user-tie"></i></a>
             <a href="{{ path('timeline_list') }}" class="box"><i class="fas fa-calendar-alt"></i></a>
-            <a href="" class="box"><i class="fas fa-tools"></i></a>
+            <a href="{{ path('skill_list') }}" class="box"><i class="fas fa-tools"></i></a>
             <a href="{{ path('project_list') }}" class="box"><i class="fas fa-eye"></i></a>
         </div>
-        <a class="mt-5" href="{{ path('index') }}">Retour au site</a>
     </div>
 {% endblock %}

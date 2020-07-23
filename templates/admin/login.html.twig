@@ -1,4 +1,4 @@
-{% extends 'admin/base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title 'Admin connexion' %}
 
@@ -10,7 +10,7 @@
 
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <form method="post">
-            <h1 class="mb-3 text-wild text-center">Merci de vous connectez</h1>
+            <h1 class="mb-3 text-wild text-center">Salut {{ admin.forename }}</h1>
             <label for="inputEmail">Email</label>
             <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
             <label for="inputPassword">Password</label>

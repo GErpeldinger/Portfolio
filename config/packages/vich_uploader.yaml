@@ -2,9 +2,16 @@ vich_uploader:
     db_driver: orm
 
     mappings:
-        project_images:
+        project_image:
             uri_prefix: /images/projects
             upload_destination: '%kernel.project_dir%/public/images/projects'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+        skill_icone:
+            uri_prefix: /images/skills/icones
+            upload_destination: '%kernel.project_dir%/public/images/skills/icones'
             namer: Vich\UploaderBundle\Naming\UniqidNamer
             inject_on_load: false
             delete_on_update: true
