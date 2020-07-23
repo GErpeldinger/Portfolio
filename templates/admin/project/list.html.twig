@@ -1,0 +1,29 @@
+{% extends('admin/base.html.twig') %}
+
+{% block title 'Liste des projets' %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-wild" href="{{ path('project_new') }}">Nouveau projet</a>
+        </div>
+        <h2 class="text-center">Liste des projets</h2>
+        {% for project in projects %}
+            <div class="d-flex justify-content-center align-items-center mt-1">
+                <div class="col-3"><p>- {{ project.title }}</p></div>
+                <div class="col-5"><p>{{ project.description }}</p></div>
+                <div class="col-2 d-flex">
+                    <div>
+                        <a class="btn btn-wild" href="{{ path('project_edit', {'id': project.id}) }}"><i class="fas fa-edit"></i></a>
+                    </div>
+                    <form method="post" action="{{ path('project_delete', {'id': project.id}) }}"
+                          onsubmit="return confirm('Voulez-vous vraiment supprimer ce projet?');">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ project.id) }}">
+                        <button class="btn btn-wild"><i class="far fa-trash-alt"></i></button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

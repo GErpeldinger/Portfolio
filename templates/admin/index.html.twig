@@ -1,0 +1,16 @@
+{% extends('admin/base.html.twig') %}
+
+{% block title 'Panel d\'administration' %}
+
+{% block body %}
+    <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+        <h1 class="text-wild mb-5">Panel d'administration</h1>
+        <div class="d-flex">
+            <a href="" class="box"><i class="fas fa-user-tie"></i></a>
+            <a href="{{ path('timeline_list') }}" class="box"><i class="fas fa-calendar-alt"></i></a>
+            <a href="" class="box"><i class="fas fa-tools"></i></a>
+            <a href="{{ path('project_list') }}" class="box"><i class="fas fa-eye"></i></a>
+        </div>
+        <a class="mt-5" href="{{ path('index') }}">Retour au site</a>
+    </div>
+{% endblock %}

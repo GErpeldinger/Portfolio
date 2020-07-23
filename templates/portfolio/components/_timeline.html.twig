@@ -37,7 +37,8 @@
                         data-date="{{ dateInfo | date('d/m/y') }}">
                         <h2>{{ event.title }}</h2>
                         <em>
-                            {{ event.endDate ? 'Du ' : '' }}
+                            {{ event.endDate and event.noDay == true ? 'De ' : '' }}
+                            {{ event.endDate and event.noDay == false ? 'Du ' : '' }}
                             {% if event.noMonth %}
                                 {{ event.startDate | date('Y') }}
                             {% elseif event.noDay %}

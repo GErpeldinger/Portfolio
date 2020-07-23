@@ -94,4 +94,13 @@ class PortfolioController extends AbstractController
             'dateInfo' => $date
         ]);
     }
+
+    /**
+     * @Route("/admin", name="admin")
+     * @return Response
+     */
+    public function admin(): Response
+    {
+        return $this->render('admin/index.html.twig');
+    }
 }

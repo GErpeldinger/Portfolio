@@ -1,0 +1,30 @@
+{% extends('admin/base.html.twig') %}
+
+{% block title 'Liste des évènements' %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-wild" href="{{ path('timeline_new') }}">Nouvelle évènement</a>
+        </div>
+        <h2 class="text-center">Liste des évènements</h2>
+        {% for timeline in timelines %}
+            <div class="d-flex justify-content-center align-items-center mt-1">
+                <div class="col-3"><p>- {{ timeline.title }}</p></div>
+                <div class="col-1"><p>{{ timeline.label }}</p></div>
+                <div class="col-3"><p>{{ timeline.startDate | date('d/m/Y') }}</p></div>
+                <div class="col-2 d-flex">
+                    <div>
+                        <a class="btn btn-wild" href="{{ path('timeline_edit', {'id': timeline.id}) }}"><i class="fas fa-edit"></i></a>
+                    </div>
+                    <form method="post" action="{{ path('timeline_delete', {'id': timeline.id}) }}"
+                          onsubmit="return confirm('Voulez-vous vraiment supprimer ce projet?');">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ timeline.id) }}">
+                        <button class="btn btn-wild"><i class="far fa-trash-alt"></i></button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

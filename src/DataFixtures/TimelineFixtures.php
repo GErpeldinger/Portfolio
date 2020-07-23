@@ -80,8 +80,8 @@ class TimelineFixtures extends Fixture
         [
             'label' => 'Joshua',
             'title' => 'Projet WCS : Joshua',
-            'startDate' => '29-04-2020',
-            'endDate' => '30-04-2020',
+            'startDate' => '6-04-2020',
+            'endDate' => '13-05-2020',
             'description' => 'Joshua est un site où est organisé des compétitions de capture de drapeau.<br>
             (Jeu consistant à exploiter des vulnérabilités d\'applications web ou logiciels)<br>
             💻 Projet de 5 semaines avec une équipe de 4 développeurs.<br>
@@ -93,8 +93,8 @@ class TimelineFixtures extends Fixture
         [
             'label' => 'Loopy',
             'title' => 'Hackathon Européen WCS : Loopy',
-            'startDate' => '29-04-2020',
-            'endDate' => '30-04-2020',
+            'startDate' => '25-06-2020',
+            'endDate' => '26-06-2020',
             'description' => 'Loopy est un outil permettant de rendre les enfants atteint de diabète insulino dépendant
             acteur de leur santé et ceci d\'une façon ludique.<br>
             💻 Projet réalisé dans la cadre d\'un Hackathon Européen de 48h organisé par la Wild Code School en

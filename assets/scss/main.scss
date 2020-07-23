@@ -2,13 +2,13 @@ body {
     background-color: $grey;
 }
 
-header {
+#header-portfolio {
     width: 80px;
     min-height: 100vh;
     border-right: 1px solid black;
 }
 
-main {
+#main-portfolio {
     min-width: calc(100% - 80px);
     min-height: 100vh;
 }
@@ -33,7 +33,7 @@ em {
     color: $white;
 }
 
-p {
+p, label, legend {
     font-family: $dosis;
     color: $white;
 }
