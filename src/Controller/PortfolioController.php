@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\AdminRepository;
+use App\Repository\ProjectRepository;
 use App\Repository\TimelineRepository;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -55,12 +56,14 @@ class PortfolioController extends AbstractController
 
     /**
      * @Route("/projets", name="projects")
+     * @param ProjectRepository $projectRepository
      * @return Response
      */
-    public function projects(): Response
+    public function projects(ProjectRepository $projectRepository): Response
     {
         return $this->render('portfolio/projects.html.twig', [
             'page' => 'projects',
+            'projects' => $projectRepository->findAll()
         ]);
     }
 

@@ -39,7 +39,7 @@ class AdminFixtures extends Fixture
         $this->passwordEncoder = $passwordEncoder;
     }
 
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $admin = new Admin();
         $admin

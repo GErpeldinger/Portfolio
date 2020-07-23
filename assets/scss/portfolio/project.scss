@@ -1,0 +1,78 @@
+@mixin project-card {
+    height: 150px;
+    width: 275px;
+    border-radius: 30px;
+}
+
+.project-card {
+    @include project-card;
+    transition-duration: 2s;
+
+    img {
+        @include project-card;
+    }
+
+    div {
+        display: none;
+    }
+
+    &:hover {
+        background-color: lighten(black, 10%);
+
+        img {
+            display: none
+        }
+
+        div {
+            margin-left: 20px;
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+
+            h4 {
+                font-size: 0.8rem;
+            }
+
+            p {
+                text-align: center;
+                font-size: 0.8rem;
+                font-weight: bolder;
+            }
+
+            .btn {
+                font-size: 0.7rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .project-card {
+        height: 275px;
+        width: 400px;
+
+        img {
+            height: 275px;
+            width: 400px;
+        }
+
+        &:hover {
+            div {
+                h4 {
+                    font-size: 1.4rem;
+                }
+
+                p {
+                    font-size: 1.2rem;
+                }
+
+                .btn {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
