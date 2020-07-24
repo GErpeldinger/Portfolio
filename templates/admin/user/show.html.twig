@@ -1,0 +1,60 @@
+{% extends('base.html.twig') %}
+
+{% block title 'Administrateur' %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between">
+            <a class="btn btn-wild" href="{{ path('admin_panel') }}">Retour au dashboard</a>
+            <div>
+                <a class="btn btn-wild" href="{{ path('admin_user_edit', {'action': constant('App\\Form\\AdminType::INFORMATION')}) }}">Modifier l'administrateur</a>
+                <a class="btn btn-wild" href="{{ path('admin_user_edit', {'action': constant('App\\Form\\AdminType::PASSWORD')}) }}">Changer de mot de passe</a>
+            </div>
+        </div>
+        <h2 class="text-center mt-5">Administrateur</h2>
+        <table class="table table-dark">
+            <tbody>
+            <tr>
+                <th scope="row" class="text-center">Email</th>
+                <td class="text-center">{{ admin.email }}</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-center">Nom</th>
+                <td class="text-center">{{ admin.surname }}</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-center">Prénom</th>
+                <td class="text-center">{{ admin.forename }}</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-center">Date de naissance</th>
+                <td class="text-center">{{ admin.birthday | date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-center">Ville</th>
+                <td class="text-center">{{ admin.city }}</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-center">Job</th>
+                <td class="text-center">{{ admin.job }}</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-center">LinkedIn</th>
+                <td class="text-center"><a href="">{{ admin.linkedIn }}</a></td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-center">Github</th>
+                <td class="text-center"><a href="">{{ admin.github }}</a></td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-center">Informations résumé</th>
+                <td class="d-flex justify-content-center"><div>{{ admin.resume | raw }}</div></td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-center">Compétences résumé</th>
+                <td class="d-flex justify-content-center"><div>{{ admin.overview | raw }}</div></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

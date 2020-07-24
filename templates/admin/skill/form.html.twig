@@ -8,7 +8,7 @@
             <h2 class="text-center">{{ 'nouveau' in app.request.pathInfo ? 'Nouvelle' : 'Éditer' }} compétence</h2>
             {{ form_start(form) }}
                 {{ form_row(form.name) }}
-                {{ form_row(form.iconeFile) }}
+                {{ form_row(form.iconFile) }}
                 <div class="d-flex justify-content-end">
                     <a class="btn btn-wild" href="{{ path('project_list') }}">Retour aux compétences</a>
                     <button class="btn btn-wild ml-2">Ajouter</button>

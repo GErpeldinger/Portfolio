@@ -1,0 +1,17 @@
+.skill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 1.2rem;
+        font-weight: bolder;
+        margin-bottom: 5px;
+    }
+
+    img {
+        width: 75px;
+        height: 75px;
+    }
+}

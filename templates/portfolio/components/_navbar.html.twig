@@ -2,7 +2,7 @@
     <img src="{{ asset('build/images/Avatar.jpg') }}" alt="">
     <div id="navbar-menu">
         {% if is_granted('ROLE_ADMIN') %}
-            <a href="{{ path('admin_index') }}">
+            <a href="{{ path('admin_panel') }}">
                 <span class="icon {{ page == 'admin' ? 'icon-active' : '' }}"><i class="fas fa-cog"></i></span>
                 <span class="text">Admin</span>
             </a>
@@ -27,7 +27,7 @@
             <span class="icon {{ page == 'projects' ? 'icon-active' : '' }}"><i class="fas fa-eye"></i></span>
             <span class="text">Projets</span>
         </a>
-        <a href="mailto:erpeldinger.g@gmail.com">
+        <a href="mailto:{{ email }}">
             <span class="icon"><i class="fas fa-envelope"></i></span>
             <span class="text">Contact</span>
         </a>

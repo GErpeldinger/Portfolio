@@ -16,7 +16,7 @@ class AdminFixtures extends Fixture
     private const SURNAME = 'Erpeldinger';
     private const FORENAME = 'Guillaume';
     private const JOB = 'Développeur Web Full Stack';
-    private const BIRTHDAY = '10-07-1992';
+    private const BIRTHDAY = '1992-07-10';
     private const CITY = 'Bordeaux';
     private const LINKEDIN = 'https://www.linkedin.com/in/guillaumeerpeldinger/';
     private const GITHUB = 'https://github.com/Nighter33';
@@ -31,6 +31,7 @@ class AdminFixtures extends Fixture
     à apprendre » combiné avec beaucoup de pratique. <br>
     Ma formation se terminant le 31 juillet, je recherche une entreprise prête à accueillir et à accompagner un
     développeur junior curieux et déterminé.';
+    private const OVERVIEW = 'Je suis en manque d\'idée';
 
     private $passwordEncoder;
 
@@ -53,7 +54,8 @@ class AdminFixtures extends Fixture
             ->setCity(self::CITY)
             ->setLinkedIn(self::LINKEDIN)
             ->setGithub(self::GITHUB)
-            ->setResume(self::RESUME);
+            ->setResume(self::RESUME)
+            ->setOverview(self::OVERVIEW);
 
         $manager->persist($admin);
 

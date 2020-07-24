@@ -75,6 +75,11 @@ class Admin implements UserInterface
      */
     private $city;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $overview;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -248,6 +253,18 @@ class Admin implements UserInterface
     public function setCity(string $city): self
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function getOverview(): ?string
+    {
+        return $this->overview;
+    }
+
+    public function setOverview(string $overview): self
+    {
+        $this->overview = $overview;
 
         return $this;
     }

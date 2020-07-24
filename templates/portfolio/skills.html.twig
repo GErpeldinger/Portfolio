@@ -1,10 +1,21 @@
 {% extends 'base.html.twig' %}
 
+{% block title 'Mes compétences' %}
+
 {% block body %}
-
+    <div class="container d-flex align-items-center vh-100">
+        <div class="col-12 col-lg-5">
+            <h2>Compétences</h2>
+            <p>{{ admin.overview | raw }}</p>
+            <p>Visitez mon <a href="{{ admin.linkedIn }}" target="_blank">LinkedIn</a> pour plus de détails ou <a href="mailto:{{ admin.email }}">contacter moi.</a></p>
+        </div>
+        <div class="col-12 col-lg-7 d-flex flex-wrap justify-content-center align-items-center">
+            {% for skill in skills %}
+                <div class="skill m-3">
+                    <p>{{ skill.name }}</p>
+                    <img src="{{ vich_uploader_asset(skill, 'iconFile') }}" alt="Icône de {{ skill.name }}" />
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
-
-{% block title %}
-
-{% endblock %}
-

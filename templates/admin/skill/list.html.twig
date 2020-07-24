@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container mt-5">
         <div class="d-flex justify-content-between">
-            <a class="btn btn-wild" href="{{ path('admin_index') }}">Retour au dashboard</a>
+            <a class="btn btn-wild" href="{{ path('admin_panel') }}">Retour au dashboard</a>
             <a class="btn btn-wild" href="{{ path('skill_new') }}">Nouvelle compétence</a>
         </div>
         <h2 class="text-center">Liste des compétences</h2>
@@ -20,7 +20,7 @@
                 <tbody>
                 {% for skill in skills %}
                     <tr>
-                        <th scope="row" class="text-center"><img class="icon-admin mr-3" src="{{ vich_uploader_asset(skill, 'iconeFile') }}" alt="Icône de {{ skill.name }}"> {{ skill.name }}</th>
+                        <th scope="row" class="text-center"><img class="icon-admin mr-3" src="{{ vich_uploader_asset(skill, 'iconFile') }}" alt="Icône de {{ skill.name }}"> {{ skill.name }}</th>
                         <td>
                             <div class="d-flex justify-content-center align-items-center">
                                 <a class="btn btn-wild" href="{{ path('skill_edit', {'id': skill.id}) }}"><i class="fas fa-edit"></i></a>

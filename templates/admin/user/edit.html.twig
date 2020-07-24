@@ -1,0 +1,25 @@
+{% extends('base.html.twig') %}
+
+{% block title 'Editer l\'administrateur' %}
+
+{% block body %}
+
+    <div class="container mt-5">
+
+        <h2 class="text-center">
+            {% if constant('App\\Form\\AdminType::INFORMATION') in app.request.pathInfo %}
+                Modifier les informations de l'administrateur
+            {% elseif constant('App\\Form\\AdminType::PASSWORD') in app.request.pathInfo %}
+                Modifier le mot de passe
+            {% endif %}
+        </h2>
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <div class="d-flex justify-content-end mb-3">
+                <a class="btn btn-wild" href="{{ path('admin_user_show') }}">Retour à l'administrateur</a>
+                <button class="btn btn-wild ml-2">Éditer</button>
+            </div>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

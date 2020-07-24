@@ -32,13 +32,13 @@ class Skill
      * @ORM\Column(type="string", length=255)
      * @var string
      */
-    private $icone;
+    private $icon;
 
     /**
-     * @Vich\UploadableField(mapping="skill_icone", fileNameProperty="icone")
+     * @Vich\UploadableField(mapping="skill_icon", fileNameProperty="icon")
      * @var File
      */
-    private $iconeFile;
+    private $iconFile;
 
     /**
      * @ORM\Column(type="datetime")
@@ -67,26 +67,26 @@ class Skill
         return $this;
     }
 
-    public function getIcone(): ?string
+    public function getIcon(): ?string
     {
-        return $this->icone;
+        return $this->icon;
     }
 
-    public function setIcone(?string $icone): self
+    public function setIcon(?string $icon): self
     {
-        $this->icone = $icone;
+        $this->icon = $icon;
 
         return $this;
     }
 
-    public function getIconeFile(): ?File
+    public function getIconFile(): ?File
     {
-        return $this->iconeFile;
+        return $this->iconFile;
     }
 
-    public function setIconeFile(File $icone = null): self
+    public function setIconFile(File $icon = null): self
     {
-        $this->iconeFile = $icone;
+        $this->iconFile = $icon;
 
         return $this;
     }

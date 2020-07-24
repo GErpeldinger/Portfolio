@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Admin;
 use App\Repository\AdminRepository;
 use App\Repository\ProjectRepository;
+use App\Repository\SkillRepository;
 use App\Repository\TimelineRepository;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,11 +22,9 @@ class PortfolioController extends AbstractController
      */
     public function index(AdminRepository $adminRepository): Response
     {
-        $admin = $adminRepository->findOneBy([]);
-
         return $this->render('portfolio/index.html.twig', [
             'page' => 'index',
-            'admin' => $admin
+            'admin' => $adminRepository->findOneBy([])
         ]);
     }
 
@@ -35,22 +35,24 @@ class PortfolioController extends AbstractController
      */
     public function infos(AdminRepository $adminRepository): Response
     {
-        $admin = $adminRepository->findOneBy([]);
-
         return $this->render('portfolio/infos.html.twig', [
             'page' => 'infos',
-            'admin' => $admin
+            'admin' => $adminRepository->findOneBy([])
         ]);
     }
 
     /**
      * @Route("/compétences", name="skills")
+     * @param AdminRepository $adminRepository
+     * @param SkillRepository $skillRepository
      * @return Response
      */
-    public function skills(): Response
+    public function skills(AdminRepository $adminRepository, SkillRepository $skillRepository): Response
     {
         return $this->render('portfolio/skills.html.twig', [
             'page' => 'skills',
+            'admin' => $adminRepository->findOneBy([]),
+            'skills' => $skillRepository->findAll()
         ]);
     }
 
@@ -79,6 +81,7 @@ class PortfolioController extends AbstractController
         return $this->render('portfolio/components/_navbar.html.twig', [
             'linkedIn' => $admin->getLinkedIn(),
             'github' => $admin->getGithub(),
+            'email' => $admin->getEmail(),
             'page' => $page
         ]);
     }
@@ -121,14 +124,5 @@ class PortfolioController extends AbstractController
             'error' => $error,
             'admin' => $adminRepository->findOneBy([])
         ]);
-    }
-
-    /**
-     * @Route("/admin", name="admin_index")
-     * @return Response
-     */
-    public function admin_panel(): Response
-    {
-        return $this->render('admin/index.html.twig');
     }
 }
