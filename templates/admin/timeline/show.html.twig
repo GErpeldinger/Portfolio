@@ -36,11 +36,11 @@
                     <th scope="row" class="text-center">Fin</th>
                     <td class="text-center">
                         {% if event.noMonth == true %}
-                            {{ event.endDate | date('Y') }}
+                            {{ event.endDate ? event.endDate | date('Y') : '' }}
                         {% elseif event.noDay == true %}
-                            {{ event.endDate | date('m/Y') }}
+                            {{ event.endDate ? event.endDate | date('m/Y') : '' }}
                         {% else %}
-                            {{ event.endDate | date('d/m/Y') }}
+                            {{ event.endDate ? event.endDate | date('d/m/Y') : '' }}
                         {% endif %}
                     </td>
                 </tr>

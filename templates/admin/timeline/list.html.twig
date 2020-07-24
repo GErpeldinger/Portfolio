@@ -36,11 +36,11 @@
                         </td>
                         <td class="text-center">
                             {% if timeline.noMonth == true %}
-                                {{ timeline.endDate | date('Y') }}
+                                {{ timeline.endDate ? timeline.endDate | date('Y') : '' }}
                             {% elseif timeline.noDay == true %}
-                                {{ timeline.endDate | date('m/Y') }}
+                                {{ timeline.endDate ? timeline.endDate | date('m/Y') : '' }}
                             {% else %}
-                                {{ timeline.endDate | date('d/m/Y') }}
+                                {{ timeline.endDate ? timeline.endDate | date('d/m/Y') : '' }}
                             {% endif %}
                         </td>
                         <td>
