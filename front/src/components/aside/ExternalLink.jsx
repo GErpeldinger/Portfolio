@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {object, string} from 'prop-types';
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
@@ -13,9 +13,9 @@ const ExternalLink = ({url, icon, children}) => {
 }
 
 ExternalLink.propTypes = {
-    url: PropTypes.string.isRequired,
-    icon: PropTypes.object.isRequired,
-    children: PropTypes.string.isRequired,
+    url: string.isRequired,
+    icon: object.isRequired,
+    children: string.isRequired,
 }
 
 export default ExternalLink;

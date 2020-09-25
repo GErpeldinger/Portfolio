@@ -6,6 +6,7 @@ body {
 
     .App {
         display: flex;
+        overflow-x: hidden;
 
         aside {
             width: 80px;
@@ -77,6 +78,12 @@ body {
     }
     &-nowrap {
         white-space: nowrap;
+    }
+    &-center {
+        text-align: center;
+    }
+    &-left {
+        text-align: left;
     }
 }
 

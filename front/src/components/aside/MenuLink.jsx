@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {object, string, array} from 'prop-types';
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
@@ -17,10 +17,10 @@ const MenuLink = ({icon, name, pages, children}) => {
 }
 
 MenuLink.propTypes = {
-    icon: PropTypes.object.isRequired,
-    name: PropTypes.string.isRequired,
-    pages: PropTypes.array.isRequired,
-    children: PropTypes.string.isRequired
+    icon: object.isRequired,
+    name: string.isRequired,
+    pages: array.isRequired,
+    children: string.isRequired
 }
 
 export default MenuLink;

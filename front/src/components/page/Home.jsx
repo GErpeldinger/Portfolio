@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import PropTypes from 'prop-types';
+import {array} from 'prop-types';
 import parser from 'html-react-parser';
 
 import Photo from '../../images/Photo.jpg';
@@ -18,7 +18,7 @@ const Home = ({load}) => {
     })
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/infos/2')
+        axios.get('http://localhost:8000/api/infos/1')
             .then(response => response.data)
             .then(data => {
                 setInfos(data)
@@ -53,7 +53,7 @@ const Home = ({load}) => {
 }
 
 Home.propTypes = {
-    load: PropTypes.array.isRequired
+    load: array.isRequired
 }
 
 export default Home;

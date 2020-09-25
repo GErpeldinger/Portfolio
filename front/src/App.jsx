@@ -3,7 +3,7 @@ import './scss/App.scss';
 
 import NavBar from "./components/aside/NavBar";
 import Home from "./components/page/Home";
-import Info from "./components/page/Info";
+import Info from "./components/page/Info/Info";
 
 import {createMuiTheme, MuiThemeProvider} from "@material-ui/core/styles";
 

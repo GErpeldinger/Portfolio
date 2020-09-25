@@ -1,8 +1,19 @@
 .Info {
+    height: 100vh;
+    overflow-y: scroll;
+
     .paper {
         padding: 6px 16px;
     }
     .primary-tail {
         background-color: $wild;
+    }
+
+    .date {
+        margin-top: 10px;
+    }
+
+    .align-left {
+        text-align: left;
     }
 }

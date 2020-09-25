@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import PropTypes from 'prop-types';
+import {array} from 'prop-types';
 import axios from 'axios';
 
 import MenuLink from './MenuLink';
@@ -43,7 +43,7 @@ const NavBar = ({pages}) => {
 }
 
 NavBar.propTypes = {
-    pages: PropTypes.array.isRequired
+    pages: array.isRequired
 }
 
 export default NavBar;
