@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    background-color: $grey;
+    font-family: $mali;
+    color: $white;
+
+    .App {
+        display: flex;
+
+        aside {
+            width: 80px;
+            border-right: 1px solid black;
+        }
+
+        main {
+            min-width: calc(100% - 80px);
+            min-height: 100vh;
+        }
+    }
+
+    h2 {
+        font-family: $dosis;
+    }
+
+    h3 {
+        color: $white;
+        font-size: 1.6rem;
+        margin: 10px 0;
+    }
+
+    h4 {
+        color: $wild;
+        font-size: 1.3rem;
+        margin: 10px 0;
+    }
+}
+
+.d {
+    &-flex {
+        display: flex;
+    }
+}
+
+.flex {
+    &-column {
+        flex-direction: column;
+    }
+}
+
+.justify-content {
+    &-center {
+        justify-content: center;
+    }
+}
+
+.align-items {
+    &-center {
+        align-items: center;
+    }
+}
+
+.min-h {
+    &-100 {
+        min-height: 100%;
+    }
+}
+
+.max-w {
+    &-50 {
+        max-width: 75%;
+    }
+}
+
+.text {
+    &-wild {
+        color: $wild;
+    }
+    &-nowrap {
+        white-space: nowrap;
+    }
+}
+
+.small-caps {
+    font-variant-caps: small-caps;
+}
+
+.ml {
+    &-1 {
+        margin-left: 1%;
+    }
+
+    &-2 {
+        margin-left: 5%;
+    }
+}

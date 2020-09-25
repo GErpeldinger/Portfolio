@@ -1,0 +1,27 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+
+    .img-profile {
+        width: 200px;
+        height: 200px;
+        border: 4px solid $white;
+        border-radius: 50%;
+    }
+
+    .resume {
+        margin-top: 50px;
+        width: 60%;
+        background-color: $light-grey;
+        padding: 0px 15px 5px 15px;
+        color: black;
+        border-radius: 15px;
+
+        br {
+            margin-bottom: 10px;
+        }
+    }
+}
