@@ -47,17 +47,18 @@ class TimelineCrudController extends AbstractCrudController
         $noDay = BooleanField::new('noDay', 'Pas de jour');
         $noMonth = BooleanField::new('noMonth', 'Pas de mois');
         $description = TextareaField::new('description', 'Description');
+        $icon = TextField::new('icon', 'Icône');
 
         if ($pageName === Crud::PAGE_INDEX) {
             $result = [$order, $title, $startDate, $endDate];
         }
 
         if ($pageName === Crud::PAGE_EDIT) {
-            $result = [$order, $title, $startDate, $endDate, $noDay, $noMonth, $description];
+            $result = [$order, $title, $icon, $startDate, $endDate, $noDay, $noMonth, $description];
         }
 
         if ($pageName === Crud::PAGE_DETAIL) {
-            $result = [$order, $title, $startDate, $endDate, $noDay, $noMonth, $description];
+            $result = [$order, $title, $icon, $startDate, $endDate, $noDay, $noMonth, $description];
         }
 
         return $result;

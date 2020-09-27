@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {array} from 'prop-types';
+import {func, object} from 'prop-types';
 import axios from 'axios';
 
 import MenuLink from './MenuLink';
@@ -10,8 +10,7 @@ import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
 import avatar from '../../images/Avatar.jpg';
 
-const NavBar = ({pages}) => {
-    const [PAGES, page, handlePage] = pages
+const NavBar = ({pages, setLoading}) => {
     const [linkLinkedIn, setLinkLinkedIn] = useState('')
     const [linkGitHub, setLinkGitHub] = useState('')
 
@@ -28,11 +27,11 @@ const NavBar = ({pages}) => {
         <nav className="NavBar">
             <img src={avatar} alt='Avatar' />
             <div>
-                <MenuLink icon={faHome} name={PAGES.home} pages={[page, handlePage]}>Accueil</MenuLink>
-                <MenuLink icon={faUserTie} name={PAGES.info} pages={[page, handlePage]}>Infos</MenuLink>
-                <MenuLink icon={faTools} name={PAGES.skills} pages={[page, handlePage]}>Skills</MenuLink>
-                <MenuLink icon={faEye} name={PAGES.projects} pages={[page, handlePage]}>Projets</MenuLink>
-                <MenuLink icon={faEnvelope} name={PAGES.contact} pages={[page, handlePage]}>Contact</MenuLink>
+                <MenuLink icon={faHome} url={pages.home} setLoading={setLoading}>Accueil</MenuLink>
+                <MenuLink icon={faUserTie} url={pages.info} setLoading={setLoading}>Infos</MenuLink>
+                <MenuLink icon={faTools} url={pages.skill} setLoading={setLoading}>Skills</MenuLink>
+                <MenuLink icon={faEye} url={pages.project} setLoading={setLoading}>Projets</MenuLink>
+                <MenuLink icon={faEnvelope} url={pages.contact} setLoading={setLoading}>Contact</MenuLink>
             </div>
             <div>
                 <ExternalLink icon={faLinkedin} url={linkLinkedIn}>LinkedIn</ExternalLink>
@@ -43,7 +42,8 @@ const NavBar = ({pages}) => {
 }
 
 NavBar.propTypes = {
-    pages: array.isRequired
+    pages: object.isRequired,
+    setLoading: func.isRequired
 }
 
 export default NavBar;

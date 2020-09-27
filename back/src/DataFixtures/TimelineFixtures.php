@@ -15,8 +15,6 @@ class TimelineFixtures extends Fixture
             'icon' => 'ChildCare',
             'title' => 'It\'s me, Guillaume !',
             'startDate' => '10-07-1992',
-            'description' => 'Les deux jours les plus importants de votre vie sont le jour de votre naissance et le jour
-            où vous découvrez pourquoi.'
         ],
         [
             'sequence' => 2,

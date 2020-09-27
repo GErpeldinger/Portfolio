@@ -45,7 +45,7 @@ const Home = ({load}) => {
             </div>
             <div className="resume">
                 <h3>À propos de moi...</h3>
-                <h4>J'ai {infos.age} et je suis de {infos.city}</h4>
+                <h4>J'ai {infos.age}ans et je suis de {infos.city} !</h4>
                 <p>{parser(String(infos.resume))}</p>
             </div>
         </div>
