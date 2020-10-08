@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\SkillRepository;
 use DateTime;
 use DateTimeImmutable;
@@ -14,6 +15,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @ORM\Entity(repositoryClass=SkillRepository::class)
  * @ORM\HasLifecycleCallbacks()
  * @Vich\Uploadable
+ * @ApiResource()
  */
 class Skill
 {

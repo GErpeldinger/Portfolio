@@ -6,7 +6,7 @@ import './scss/App.scss';
 import NavBar from "./components/aside/NavBar";
 import Home from "./components/page/Home";
 import Info from "./components/page/Info/Info";
-import Skill from "./components/page/Skill";
+import Skill from "./components/page/Skill/Skill";
 import Project from "./components/page/Project";
 import Contact from "./components/page/Contact";
 

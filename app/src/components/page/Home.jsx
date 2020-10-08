@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {array} from 'prop-types';
 import parser from 'html-react-parser';
+import axios from "axios";
+import {API_URL} from "../../constants";
 
 import Photo from '../../images/Photo.jpg';
-import axios from "axios";
 import Loading from "../Loading";
 
 const Home = ({load}) => {
@@ -18,7 +19,7 @@ const Home = ({load}) => {
     })
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/infos/1')
+        axios.get(API_URL + 'api/infos/1')
             .then(response => response.data)
             .then(data => {
                 setInfos(data)
@@ -34,7 +35,7 @@ const Home = ({load}) => {
         <div className="Home">
             <div className="d-flex align-items-center">
                 <img src={Photo} alt="It's me" className="img-profile" />
-                <div className="ml-2">
+                <div className="ml-5">
                     <h1 className="text-nowrap">
                         Bonjour !<br />
                         Je suis <span className="text-wild">{infos.forename} {infos.surname}</span>,<br />

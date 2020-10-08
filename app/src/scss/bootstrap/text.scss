@@ -1,0 +1,21 @@
+.text {
+    &-wild {
+        color: $wild;
+    }
+
+    &-nowrap {
+        white-space: nowrap;
+    }
+
+    &-center {
+        text-align: center;
+    }
+
+    &-left {
+        text-align: left;
+    }
+}
+
+.small-caps {
+    font-variant-caps: small-caps;
+ }
