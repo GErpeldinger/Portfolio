@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {array} from 'prop-types';
 import axios from 'axios';
-import {API_URL} from "../../../constants";
+import {API_GET_TIMELINE} from "../../../constants";
 
 import Timeline from '@material-ui/lab/Timeline';
 import TimelineObject from './TimelineObject';
@@ -12,7 +12,7 @@ const Info = ({load}) => {
     const [timeline, setTimeline] = useState({})
 
     useEffect(() => {
-        axios.get(API_URL + 'api/timelines')
+        axios.get(API_GET_TIMELINE)
             .then(response => response.data)
             .then(data => {
                 setTimeline(data['hydra:member'])

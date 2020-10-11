@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {array} from 'prop-types';
 import parser from 'html-react-parser';
 import axios from "axios";
-import {API_URL} from "../../constants";
+import {API_GET_INFO} from "../../constants";
 
 import Photo from '../../images/Photo.jpg';
 import Loading from "../Loading";
@@ -19,7 +19,7 @@ const Home = ({load}) => {
     })
 
     useEffect(() => {
-        axios.get(API_URL + 'api/infos/1')
+        axios.get(API_GET_INFO)
             .then(response => response.data)
             .then(data => {
                 setInfos(data)

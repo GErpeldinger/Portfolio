@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {array} from "prop-types";
 import parser from 'html-react-parser';
 import axios from "axios";
-import {API_URL} from "../../../constants";
+import {API_GET_INFO, API_GET_SKILL} from "../../../constants";
 
 import Loading from "../../Loading";
 import SkillIcon from "./SkillIcon";
@@ -16,10 +16,10 @@ const Skill = ({load}) => {
     })
 
     useEffect(() => {
-        axios.get(API_URL + 'api/infos/1')
+        axios.get(API_GET_INFO)
             .then(response => response.data)
             .then(data => setSummary(data.summary))
-        axios.get(API_URL + 'api/skills')
+        axios.get(API_GET_SKILL)
             .then(response => response.data)
             .then(data => {
                 setSkills(data['hydra:member'])

@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Admin;
 use App\Entity\Infos;
 use App\Entity\Link;
+use App\Entity\Project;
 use App\Entity\Skill;
 use App\Entity\Timeline;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -43,5 +44,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::LinkToCrud('Modifier liens', 'fas fa-link', Link::class);
         yield MenuItem::LinkToCrud('Modifier la timeline', 'fas fa-calendar-alt', Timeline::class);
         yield MenuItem::linkToCrud('Modifier les skills', 'fas fa-tools', Skill::class);
+        yield MenuItem::linkToCrud('Modifier les projets', 'fas fa-eye', Project::class);
     }
 }

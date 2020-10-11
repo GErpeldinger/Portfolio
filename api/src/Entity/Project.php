@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
-use App\Repository\SkillRepository;
+use App\Repository\ProjectRepository;
 use DateTime;
 use DateTimeImmutable;
 use DateTimeInterface;
@@ -13,35 +13,39 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ApiResource()
- * @ORM\Entity(repositoryClass=SkillRepository::class)
+ * @ORM\Entity(repositoryClass=ProjectRepository::class)
  * @ORM\HasLifecycleCallbacks()
  * @Vich\Uploadable
  */
-class Skill
+class Project
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\Id
+     * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=45)
+     * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @var string
      */
-    private $icon;
+    private $description;
 
     /**
-     * @Vich\UploadableField(mapping="skill_icon", fileNameProperty="icon")
+     * @ORM\Column(type="string", length=255)
+     */
+    private $cover;
+
+    /**
+     * @Vich\UploadableField(mapping="project_cover", fileNameProperty="cover")
      * @var File
      */
-    private $iconFile;
+    private $coverFile;
 
     /**
      * @ORM\Column(type="datetime")
@@ -70,28 +74,40 @@ class Skill
         return $this;
     }
 
-    public function getIcon(): ?string
+    public function getDescription(): ?string
     {
-        return $this->icon;
+        return $this->description;
     }
 
-    public function setIcon(?string $icon): self
+    public function setDescription(string $description): self
     {
-        $this->icon = $icon;
+        $this->description = $description;
 
         return $this;
     }
 
-    public function getIconFile(): ?File
+    public function getCover(): ?string
     {
-        return $this->iconFile;
+        return $this->cover;
     }
 
-    public function setIconFile(File $icon = null): self
+    public function setCover(?string $cover): self
     {
-        $this->iconFile = $icon;
+        $this->cover = $cover;
 
-        if (null !== $icon) {
+        return $this;
+    }
+
+    public function getCoverFile(): ?File
+    {
+        return $this->coverFile;
+    }
+
+    public function setCoverFile(File $cover = null): self
+    {
+        $this->coverFile = $cover;
+
+        if (null !== $cover) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
             $this->updatedAt = new DateTimeImmutable();

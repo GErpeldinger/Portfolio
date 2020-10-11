@@ -1,0 +1,9 @@
+.Project {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    margin: 0 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: scroll;
+}
