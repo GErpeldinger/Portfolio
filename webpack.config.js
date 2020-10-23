@@ -77,6 +77,7 @@ Encore
     .addPlugin(new CopyPlugin({
         patterns: [
             { from: 'assets/images', to: 'images' },
+            { from: 'assets/fonts', to: 'fonts' },
         ]
     }))
 ;
