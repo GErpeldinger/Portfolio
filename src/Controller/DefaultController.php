@@ -15,4 +15,12 @@ class DefaultController extends AbstractController
     {
         return $this->render('index.html.twig');
     }
+
+    /**
+     * @Route("/{page}", name="page")
+     */
+    public function page(): Response
+    {
+        return $this->render('index.html.twig');
+    }
 }

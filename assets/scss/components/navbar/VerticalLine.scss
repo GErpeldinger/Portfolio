@@ -1,0 +1,16 @@
+.VerticalLine {
+    height: 50px;
+    border-left: 1px solid $secondary;
+    position: absolute;
+    left: 50%;
+
+    &Top {
+        @extend .VerticalLine;
+        top: 0;
+    }
+
+    &Bottom {
+        @extend .VerticalLine;
+        bottom: 0;
+    }
+}

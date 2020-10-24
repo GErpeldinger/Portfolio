@@ -3,3 +3,9 @@
 
 // APP
 @import './variables';
+@import './main';
+
+// COMPONENTS
+@import './components/navbar/NavBar';
+@import './components/navbar/MenuLink';
+@import './components/navbar/VerticalLine';

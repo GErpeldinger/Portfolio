@@ -1,0 +1,18 @@
+body {
+    font-family: $baloo2;
+    background-color: $primary;
+    color: $secondary;
+}
+
+main {
+    margin-bottom: 70px;
+
+    @media screen and (min-width: $mediumDeviceMinWidth) {
+        margin-bottom: 128px;
+    }
+
+    @media screen and (min-width: $largeDeviceMinWidth) {
+        margin-bottom: unset;
+        margin-left: 100px;
+    }
+}
