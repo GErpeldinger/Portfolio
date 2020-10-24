@@ -1,3 +1,5 @@
+@import './normalize';
+
 // FONTS
 @import './fonts/baloo2';
 
@@ -9,3 +11,5 @@
 @import './components/navbar/NavBar';
 @import './components/navbar/MenuLink';
 @import './components/navbar/VerticalLine';
+@import './components/loader/CircularLoader';
+@import './components/loader/LinearLoader';

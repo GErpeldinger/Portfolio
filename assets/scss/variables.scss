@@ -1,7 +1,7 @@
 // COLORS
-$primary: #333333;
+$primary: #47F4CF;
 $secondary: #98A4C5;
-$tertiary: #47F4CF;
+$tertiary: #333333;
 
 // FONTS
 $baloo2: 'Baloo2', sans-serif;
@@ -13,6 +13,8 @@ $extraLargeDeviceMinWidth: 1200px; /* Large desktops */
 
 // VARIABLES EXPORTED TO JAVASCRIPT
 :export {
+    primary: $primary;
+    secondary: $secondary;
     mediumDeviceMinWidth: $mediumDeviceMinWidth;
     largeDeviceMinWidth: $largeDeviceMinWidth;
     extraLargeDeviceMinWidth: $extraLargeDeviceMinWidth;

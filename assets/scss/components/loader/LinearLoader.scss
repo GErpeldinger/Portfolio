@@ -1,0 +1,11 @@
+.LinearLoader {
+    position: fixed !important;
+    bottom: 70px;
+    left: 0;
+    width: 100%;
+
+    @media screen and (min-width: $mediumDeviceMinWidth) {
+        bottom: 128px;
+        height: 8px !important;
+    }
+}

@@ -32,7 +32,7 @@
         margin-bottom: 10px;
 
         &:hover {
-            color: $tertiary;
+            color: $primary;
             transition: all 0.4s ease-in;
         }
 
@@ -42,8 +42,8 @@
     }
 
     &Active {
-        color: $tertiary;
-        border-top: 2px solid $tertiary;
+        color: $primary;
+        border-top: 2px solid $primary;
         padding-bottom: 1px;
 
         @media screen and (min-width: $largeDeviceMinWidth) {
