@@ -1,6 +1,7 @@
 import { primary, secondary, mediumDeviceMinWidth, largeDeviceMinWidth } from './../../scss/app.scss';
 
-// URLS
+export const APP_URL = 'http://localhost:8000'
+
 export const ROUTES = {
     home: '/',
     skill: '/competences',
@@ -18,6 +19,5 @@ export const COLORS = {
     secondary: secondary
 }
 
-// BREAKPOINTS
 export const MEDIUM_DEVICE_MIN_WIDTH = `(min-device-width: ${mediumDeviceMinWidth})`;
 export const LARGE_DEVICE_MIN_WIDTH = `(min-device-width: ${largeDeviceMinWidth})`;

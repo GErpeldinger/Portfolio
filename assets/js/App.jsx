@@ -4,6 +4,7 @@ import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import { COLORS, ROUTES } from "./utils/constants";
 
 import NavBar from "./components/navbar/NavBar";
+import Project from "./routes/Project";
 
 const theme = createMuiTheme({
     palette: {
@@ -28,7 +29,7 @@ const App = () => {
 
                             </Route>
                             <Route path={ROUTES.project}>
-
+                                <Project/>
                             </Route>
                         </Switch>
                     </main>
