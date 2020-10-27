@@ -17,9 +17,17 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/{page}", name="page")
+     * @Route("/competences", name="skill")
      */
-    public function page(): Response
+    public function skill(): Response
+    {
+        return $this->render('index.html.twig');
+    }
+
+    /**
+     * @Route("/projets", name="project")
+     */
+    public function projet(): Response
     {
         return $this->render('index.html.twig');
     }

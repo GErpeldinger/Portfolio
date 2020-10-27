@@ -11,7 +11,7 @@ const ProjectCard = () => {
     const width = isTablet ? 400 : 280;
     const height = isTablet ? 235 : 160;
     const contentStyle = {
-        backgroundImage: `url(${generateUrlImageResizer(width, height, 'build/images/Index.jpg')})`
+        backgroundImage: `url(${generateUrlImageResizer(width, height, '/build/images/Index.jpg')})`
     }
 
     const [hover, setHover] = useState(false)
