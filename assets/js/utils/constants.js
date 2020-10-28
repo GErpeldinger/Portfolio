@@ -8,6 +8,10 @@ export const ROUTES = {
     project: '/projets',
 }
 
+export const API_URL = {
+    projects: APP_URL + '/api/project_categories'
+}
+
 export const LINKS = {
     email: 'mailto:erpeldinger.g@gmail.com',
     linkedin: 'https://www.linkedin.com/in/guillaumeerpeldinger/',
