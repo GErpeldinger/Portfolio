@@ -13,7 +13,7 @@ const NavBar = () => {
     const internalLinks = <Fragment>
         <MenuLink url={ROUTES.home} icon={faHome}>Accueil</MenuLink>
         <MenuLink url={ROUTES.skill} icon={faTools}>Compétences</MenuLink>
-        <MenuLink url={ROUTES.project} icon={faEye}>Projets</MenuLink>
+        <MenuLink url={ROUTES.projects} icon={faEye}>Projets</MenuLink>
     </Fragment>
 
     const externalLinks = <Fragment>

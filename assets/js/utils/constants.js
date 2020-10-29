@@ -1,15 +1,19 @@
 import { primary, secondary, mediumDeviceMinWidth, largeDeviceMinWidth } from './../../scss/app.scss';
 
 export const APP_URL = 'http://localhost:8000'
+export const API_URL = APP_URL + '/api'
+export const ADMIN_URL = APP_URL + '/admin'
+export const APP_LOGOUT = APP_URL + '/logout'
 
 export const ROUTES = {
     home: '/',
     skill: '/competences',
-    project: '/projets',
+    projects: '/projets',
+    project: '/projets/:slug',
 }
 
-export const API_URL = {
-    projects: APP_URL + '/api/project_categories'
+export const API_LINKS = {
+    projects: API_URL + '/project_categories'
 }
 
 export const LINKS = {

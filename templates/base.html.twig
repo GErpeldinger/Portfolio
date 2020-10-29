@@ -30,6 +30,12 @@
 
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    {% if (app.user and is_granted('ROLE_ADMIN')) %}
+        <div id="AdminNavBar">
+
+        </div>
+    {% endif %}
+
     {% block body %}
     {% endblock %}
 

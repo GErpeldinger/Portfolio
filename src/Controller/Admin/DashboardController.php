@@ -96,6 +96,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Site');
         yield MenuItem::linktoRoute('Accueil', 'fa fa-home', 'index');
         yield MenuItem::linktoRoute('Compétences', 'fas fa-tools', 'skill');
-        yield MenuItem::linktoRoute('Projets', 'fas fa-eye', 'project');
+        yield MenuItem::linktoRoute('Projets', 'fas fa-eye', 'projects');
     }
 }

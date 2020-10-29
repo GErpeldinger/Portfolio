@@ -37,7 +37,7 @@ const ProjectCard = ({ project }) => {
             <div className="content" style={contentStyle} onMouseEnter={handleMouse} onMouseLeave={handleMouse}>
                 {hover && <div className="hover">
                     <TagList tags={tags}/>
-                    <Link to={ROUTES.project + '/' + slug} className="tag">Cliquer pour voir plus...</Link>
+                    <Link to={ROUTES.projects + '/' + slug} className="tag">Cliquer pour voir plus...</Link>
                 </div>}
                 {!isDesktop && <div className="tag">Cliquer pour voir plus...</div>}
             </div>

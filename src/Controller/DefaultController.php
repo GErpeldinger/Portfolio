@@ -25,9 +25,18 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/projets", name="project")
+     * @Route("/projets", name="projects")
      */
-    public function projet(): Response
+    public function projects(): Response
+    {
+        return $this->render('index.html.twig');
+    }
+
+    /**
+     * @Route("/projets/{slug}", name="show_project")
+     * slug: Slugify name of the project.
+     */
+    public function showProject(): Response
     {
         return $this->render('index.html.twig');
     }
