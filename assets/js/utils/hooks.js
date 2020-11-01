@@ -6,26 +6,14 @@ export function useGetAxios(url, getLd = true) {
     const [items, setItems] = useState({})
 
     const load = useCallback(() => {
-        axios.get(url, {
-            headers: {
-                'accept': `application/${getLd ? 'ld+' : ''}json`
-            }
-        })
+        axios.get(url, { headers: { 'accept': `application/${getLd ? 'ld+' : ''}json` } })
             .then(response => response.data)
             .then(data => {
-                if (!getLd || url.match(/\/\d$/g)) {
-                    setItems(data)
-                } else {
-                    setItems(data['hydra:member'])
-                }
+                if (!getLd || url.match(/\/\d$/g)) setItems(data)
+                else setItems(data['hydra:member'])
                 setLoading(false)
             })
     }, [url])
 
-
-    return {
-        items,
-        load,
-        loading
-    }
+    return { items, load, loading }
 }

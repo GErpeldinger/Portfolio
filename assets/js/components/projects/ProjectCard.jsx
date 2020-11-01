@@ -4,17 +4,17 @@ import { LARGE_DEVICE_MIN_WIDTH, MEDIUM_DEVICE_MIN_WIDTH, ROUTES } from "../../u
 import { generateUrlImageResizer } from '../../utils/functions';
 import { Link } from "react-router-dom";
 
-import TagList from "./TagList";
+import TagsList from "./TagsList";
 
-const ProjectCard = ({ project }) => {
-    const { image, name, slug, tags } = project
+const ProjectCard = ({ id, project }) => {
+    const { imagePath, name, slug, tags } = project
 
     const isTablet = useMediaQuery({ query: MEDIUM_DEVICE_MIN_WIDTH })
     const isDesktop = useMediaQuery({ query: LARGE_DEVICE_MIN_WIDTH })
 
     const width = isTablet ? 400 : 280;
     const height = isTablet ? 235 : 160;
-    const path = image ? image.path : '/build/images/Index.jpg'
+    const path = imagePath ?? '/build/images/coming-soon.jpg'
     const contentStyle = {
         backgroundImage: `url(${generateUrlImageResizer(width, height, path)})`
     }
@@ -23,8 +23,10 @@ const ProjectCard = ({ project }) => {
     const toggleHover = () => setHover(hover => !hover)
     const handleMouse = () => isDesktop ? toggleHover() : ''
 
+    const className = checkUrlIfHashMatchProject(slug)
+
     return (
-        <div className="ProjectCard">
+        <div className={className} id={id}>
             <div className="title-bar">
                 <div className="fake-button">
                     <div className="fake-button-red"/>
@@ -36,13 +38,26 @@ const ProjectCard = ({ project }) => {
             </div>
             <div className="content" style={contentStyle} onMouseEnter={handleMouse} onMouseLeave={handleMouse}>
                 {hover && <div className="hover">
-                    <TagList tags={tags}/>
-                    <Link to={ROUTES.projects + '/' + slug} className="tag">Cliquer pour voir plus...</Link>
+                    <TagsList tags={tags}/>
+                    <Link to={ROUTES.projects + '/' + slug} className="tag">Cliquer ici pour voir plus...</Link>
                 </div>}
-                {!isDesktop && <div className="tag">Cliquer pour voir plus...</div>}
+                {!isDesktop && <Link to={ROUTES.projects + '/' + slug} className="tag">Cliquer ici pour voir plus...</Link>}
             </div>
         </div>
     );
+}
+
+const checkUrlIfHashMatchProject = (slug) => {
+    let className = 'ProjectCard'
+    let hash = window.location.hash
+    if (hash) {
+        hash = hash.slice(1)
+        if (hash === slug) {
+            className += ' showCardAnimation'
+        }
+    }
+
+    return className;
 }
 
 export default ProjectCard;

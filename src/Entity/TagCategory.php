@@ -10,7 +10,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read:project"}},
+ *     normalizationContext={"groups"={"read:projects"}},
  *     collectionOperations={},
  *     itemOperations={"GET"}
  * )
@@ -27,7 +27,7 @@ class TagCategory
     private $id;
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      * @ORM\Column(type="string", length=100)
      */
     private $name;

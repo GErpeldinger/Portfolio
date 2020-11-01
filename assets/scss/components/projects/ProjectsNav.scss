@@ -1,0 +1,25 @@
+.ProjectsNav {
+    width: 450px;
+    margin-top: 100px;
+
+    > ul {
+        list-style: none;
+
+        li.title {
+            color: $primary;
+            border-bottom: 1px solid $primary;
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: $secondary;
+
+            &:hover {
+                color: $primary;
+                font-size: 1.1rem;
+                transition: 300ms ease-in-out;
+            }
+        }
+    }
+}

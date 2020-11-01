@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
 
-    @media screen and (min-width: $mediumDeviceMinWidth) {
+    @media screen and #{$mediumDeviceMinWidth} {
         bottom: 128px;
         height: 8px !important;
     }

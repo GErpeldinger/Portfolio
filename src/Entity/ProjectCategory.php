@@ -12,7 +12,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read:project"}},
+ *     normalizationContext={"groups"={"read:projects"}},
  *     collectionOperations={"GET"},
  *     itemOperations={"GET"},
  *     attributes={"order"={"id": "ASC", "projects.startDate": "ASC"}}
@@ -30,19 +30,19 @@ class ProjectCategory
     private $id;
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      * @ORM\Column(type="string", length=100)
      */
     private $name;
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      * @ORM\Column(type="string", length=255)
      */
     private $title;
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      * @ORM\OneToMany(targetEntity=Project::class, mappedBy="category", orphanRemoval=true)
      */
     private $projects;

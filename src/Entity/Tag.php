@@ -13,7 +13,7 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read:project"}},
+ *     normalizationContext={"groups"={"read:projects"}},
  *     collectionOperations={},
  *     itemOperations={"GET"}
  * )
@@ -30,19 +30,19 @@ class Tag
     private $id;
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      * @ORM\Column(type="string", length=50)
      */
     private $name;
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      * @ORM\Column(type="string", length=2083, nullable=true)
      */
     private $link;
@@ -115,7 +115,7 @@ class Tag
     }
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      * @SerializedName("category")
      */
     public function getCategoryName(): string

@@ -1,4 +1,11 @@
-import { primary, secondary, mediumDeviceMinWidth, largeDeviceMinWidth } from './../../scss/app.scss';
+import {
+    primary,
+    secondary,
+    smallDevice,
+    mediumDevice,
+    largeDevice,
+    extraLargeDevice
+} from './../../scss/app.scss';
 
 export const APP_URL = 'http://localhost:8000'
 export const API_URL = APP_URL + '/api'
@@ -27,5 +34,13 @@ export const COLORS = {
     secondary: secondary
 }
 
-export const MEDIUM_DEVICE_MIN_WIDTH = `(min-device-width: ${mediumDeviceMinWidth})`;
-export const LARGE_DEVICE_MIN_WIDTH = `(min-device-width: ${largeDeviceMinWidth})`;
+export const BREAKPOINTS = {
+    small: parseInt(smallDevice),
+    medium: parseInt(mediumDevice),
+    large: parseInt(largeDevice),
+    extra_large: parseInt(extraLargeDevice)
+}
+
+export const MEDIUM_DEVICE_MIN_WIDTH = `(min-device-width: ${BREAKPOINTS.medium}px)`;
+export const LARGE_DEVICE_MIN_WIDTH = `(min-device-width: ${BREAKPOINTS.large}px)`;
+export const EXTRA_LARGE_DEVICE_MIN_WIDTH = `(min-device-width: ${BREAKPOINTS.extra_large}px)`;

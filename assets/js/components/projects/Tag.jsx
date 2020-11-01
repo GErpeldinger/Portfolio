@@ -14,7 +14,7 @@ const Tag = ({ category, description, link, children }) => {
     return (
         <li className="Tag" onMouseEnter={handlePopoverOpen} onMouseLeave={handlePopoverClose} aria-owns={open ? 'mouse-over-popover' : undefined}
             aria-haspopup="true">
-            <a href={link} target="_blank">{children}</a>
+            <a href={link} target="_blank" rel="noopener noreferrer">{children}</a>
             <Popover open={open}
                      className="Popover"
                      id="mouse-over-popover"
@@ -28,9 +28,8 @@ const Tag = ({ category, description, link, children }) => {
                          horizontal: 'center',
                      }}
                      onClose={handlePopoverClose}
-                     disableRestoreFocus
             >
-                <p>{children} - {category}</p>
+                <h4>{children} - {category}</h4>
                 <p>{description}</p>
                 <p>Cliquer pour plus d'informations.</p>
             </Popover>

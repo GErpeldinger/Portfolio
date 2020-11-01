@@ -9,6 +9,7 @@
     align-content: center;
     justify-content: space-evenly;
     box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.2);
+    background-color: $tertiary;
 
     .menu {
         display: flex;
@@ -18,11 +19,11 @@
         margin-top: 50px;
     }
 
-    @media screen and (min-width: $mediumDeviceMinWidth) {
+    @media screen and #{$mediumDeviceMinWidth} {
         height: 128px;
     }
 
-    @media screen and (min-width: $largeDeviceMinWidth) {
+    @media screen and #{$largeDeviceMinWidth} {
         height: calc(100% - 50px);
         padding-bottom: 50px;
         width: 100px;

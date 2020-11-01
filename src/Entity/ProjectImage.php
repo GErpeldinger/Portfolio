@@ -12,16 +12,11 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read:project"}},
+ *     normalizationContext={"groups"={"read:projectss"}},
  *     collectionOperations={},
  *     itemOperations={"GET"}
  * )
  * @Vich\Uploadable
- * @UniqueEntity(
- *     fields={"isCover", "project"},
- *     errorPath="project",
- *     message="Il existe déjà une image principal pour le projet {{ value }}."
- * )
  * @ORM\Entity(repositoryClass=ProjectImageRepository::class)
  */
 class ProjectImage
@@ -34,7 +29,7 @@ class ProjectImage
     private $id;
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      * @ORM\Column(type="string", length=100)
      */
     private $name;
@@ -96,7 +91,7 @@ class ProjectImage
     }
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      */
     public function getPath(): string
     {

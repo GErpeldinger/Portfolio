@@ -1,0 +1,15 @@
+.ProjectsList {
+    width: 100%;
+
+    .category {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    @media screen and #{$largeDeviceMinWidth} {
+        overflow: scroll;
+        height: 100vh;
+    }
+}

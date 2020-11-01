@@ -90,6 +90,16 @@ class TagFixtures extends Fixture implements DependentFixtureInterface
             'description' => '',
             'link' => 'https://www.thecocktaildb.com/',
             'category' => 'tag_category_6'
+        ],
+        'API Platform' => [
+            'description' => '',
+            'link' => 'https://api-platform.com/',
+            'category' => 'tag_category_5'
+        ],
+        'Glide' => [
+            'description' => '',
+            'link' => 'https://glide.thephpleague.com/',
+            'category' => 'tag_category_5'
         ]
     ];
 

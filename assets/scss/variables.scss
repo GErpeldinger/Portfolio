@@ -1,21 +1,30 @@
 // COLORS
-$primary: #47F4CF;
-$secondary: #98A4C5;
-$tertiary: #333333;
+$primary: #47bdf4;
+$secondary: #f5f5f5;
+$tertiary: #212121;
 
 // FONTS
 $baloo2: 'Baloo2', sans-serif;
 
 // BREAKPOINTS
-$mediumDeviceMinWidth: 768px; /* Tablets */
-$largeDeviceMinWidth: 992px; /* Desktops */
-$extraLargeDeviceMinWidth: 1200px; /* Large desktops */
+$smallDevice: 540;
+$mediumDevice: 768;
+$largeDevice: 992;
+$extraLargeDevice: 1250;
+
+// MediaQuery
+$smallDeviceMinWidth: (min-width: #{$smallDevice}px);
+$mediumDeviceMinWidth: (min-width: #{$mediumDevice}px); /* Tablets */
+$largeDeviceMinWidth: (min-width: #{$largeDevice}px); /* Desktops */
+$largeDeviceMaxWidth: (max-width: #{$largeDevice}px); /* Desktops */
+$extraLargeDeviceMinWidth: (min-width: #{$extraLargeDevice}px); /* Large desktops */
 
 // VARIABLES EXPORTED TO JAVASCRIPT
 :export {
     primary: $primary;
     secondary: $secondary;
-    mediumDeviceMinWidth: $mediumDeviceMinWidth;
-    largeDeviceMinWidth: $largeDeviceMinWidth;
-    extraLargeDeviceMinWidth: $extraLargeDeviceMinWidth;
+    smallDevice: $smallDevice;
+    mediumDevice: $mediumDevice;
+    largeDevice: $largeDevice;
+    extraLargeDevice: $extraLargeDevice;
 }

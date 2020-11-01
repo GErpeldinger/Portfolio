@@ -7,12 +7,17 @@ body {
 main {
     margin-bottom: 70px;
 
-    @media screen and (min-width: $mediumDeviceMinWidth) {
+    @media screen and #{$mediumDeviceMinWidth} {
         margin-bottom: 128px;
     }
 
-    @media screen and (min-width: $largeDeviceMinWidth) {
+    @media screen and #{$largeDeviceMinWidth} {
         margin-bottom: unset;
         margin-left: 100px;
     }
+}
+
+h2 {
+    font-variant-caps: small-caps;
+    text-align: center;
 }

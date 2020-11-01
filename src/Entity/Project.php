@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ProjectRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -13,7 +14,7 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read:project"}},
+ *     normalizationContext={"groups"={"read:projects"}},
  *     collectionOperations={},
  *     itemOperations={"GET"},
  * )
@@ -26,18 +27,20 @@ class Project
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @ApiProperty(identifier=false)
      */
     private $id;
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      * @ORM\Column(type="string", length=100)
      */
     private $name;
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      * @ORM\Column(type="string", length=100)
+     * @ApiProperty(identifier=true)
      */
     private $slug;
 
@@ -47,7 +50,7 @@ class Project
     private $projectImages;
 
     /**
-     * @Groups({"read:project"})
+     * @Groups({"read:projects"})
      * @ORM\ManyToMany(targetEntity=Tag::class, inversedBy="projects")
      */
     private $tags;
@@ -112,16 +115,16 @@ class Project
     }
 
     /**
-     * @Groups({"read:project"})
-     * @SerializedName("image")
+     * @Groups({"read:projects"})
+     * @SerializedName("imagePath")
      */
-    public function getPrincipalProjectImage(): ?ProjectImage
+    public function getPrincipalProjectImagePath(): ?string
     {
         $principalImage = $this->getProjectImages()
             ->filter(fn (ProjectImage $image) => $image->getIsCover() === true)
             ->first();
 
-        return $principalImage === false ? null : $principalImage;
+        return $principalImage === false ? null : $principalImage->getPath();
     }
 
     public function addProjectImage(ProjectImage $projectImage): self

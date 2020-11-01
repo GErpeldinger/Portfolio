@@ -7,13 +7,20 @@
 @import './variables';
 @import './main';
 
-// COMPONENTS
+// NAVBAR
 @import './components/admin_navbar/AdminNavBar';
 @import './components/navbar/NavBar';
 @import './components/navbar/MenuLink';
 @import './components/navbar/VerticalLine';
+
+// LOADER
 @import './components/loader/CircularLoader';
 @import './components/loader/LinearLoader';
-@import './components/project/ProjectCard';
-@import './components/project/TagList';
-@import './components/project/Tag';
+
+// PROJECTS
+@import './routes/Projects';
+@import 'components/projects/ProjectCard';
+@import 'components/projects/ProjectsList';
+@import 'components/projects/ProjectsNav';
+@import 'components/projects/TagsList';
+@import 'components/projects/Tag';
