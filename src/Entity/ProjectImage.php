@@ -12,7 +12,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read:projectss"}},
  *     collectionOperations={},
  *     itemOperations={"GET"}
  * )
@@ -29,7 +28,7 @@ class ProjectImage
     private $id;
 
     /**
-     * @Groups({"read:projects"})
+     * @Groups({"read:project"})
      * @ORM\Column(type="string", length=100)
      */
     private $name;
@@ -91,7 +90,7 @@ class ProjectImage
     }
 
     /**
-     * @Groups({"read:projects"})
+     * @Groups({"read:project"})
      */
     public function getPath(): string
     {

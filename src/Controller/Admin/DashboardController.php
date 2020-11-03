@@ -38,17 +38,20 @@ class DashboardController extends AbstractDashboardController
 
     public function configureUserMenu(UserInterface $user): UserMenu
     {
+        /** @var Admin $admin */
+        $admin = $this->getUser();
+
         return parent::configureUserMenu($user)
             ->setName('Erpeldinger Guillaume')
             ->setAvatarUrl('/build/images/favicon/apple-icon-60x60.png')
             ->setMenuItems([
                 MenuItem::linkToCrud('Modifier email', 'fas fa-at', Admin::class)
                     ->setController(EditEmailController::class)
-                    ->setEntityId(1)
+                    ->setEntityId($admin->getId())
                     ->setAction('edit'),
                 MenuItem::linkToCrud('Modifier password', 'fas fa-key', Admin::class)
                     ->setController(EditPasswordController::class)
-                    ->setEntityId(1)
+                    ->setEntityId($admin->getId())
                     ->setAction('edit'),
                 MenuItem::linkToLogout('Déconnexion', 'a fa-sign-out')
             ]);
@@ -58,33 +61,31 @@ class DashboardController extends AbstractDashboardController
     {
         return Actions::new()
             ->add(Crud::PAGE_INDEX, Action::NEW)
-            ->update(Crud::PAGE_INDEX, Action::NEW, fn (Action $action) => $action->setIcon('fas fa-plus'))
+            ->update(Crud::PAGE_INDEX, Action::NEW, fn(Action $action) => $action->setIcon('fas fa-plus'))
             ->add(Crud::PAGE_INDEX, Action::EDIT)
-            ->update(Crud::PAGE_INDEX, Action::EDIT, fn (Action $action) => $action->setIcon('fas fa-edit')->setLabel(false))
+            ->update(Crud::PAGE_INDEX, Action::EDIT, fn(Action $action) => $action->setIcon('fas fa-edit')->setLabel(false))
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
-            ->update(Crud::PAGE_INDEX, Action::DETAIL, fn (Action $action) => $action->setIcon('fas fa-eye')->setLabel(false))
+            ->update(Crud::PAGE_INDEX, Action::DETAIL, fn(Action $action) => $action->setIcon('fas fa-eye')->setLabel(false))
             ->add(Crud::PAGE_INDEX, Action::DELETE)
-            ->update(Crud::PAGE_INDEX, Action::DELETE, fn (Action $action) => $action->setIcon('fas fa-trash-alt')->setLabel(false))
-
+            ->update(Crud::PAGE_INDEX, Action::DELETE, fn(Action $action) => $action->setIcon('fas fa-trash-alt')->setLabel(false))
             ->add(Crud::PAGE_DETAIL, Action::EDIT)
-            ->update(Crud::PAGE_DETAIL, Action::EDIT, fn (Action $action) => $action->setIcon('fas fa-edit'))
+            ->update(Crud::PAGE_DETAIL, Action::EDIT, fn(Action $action) => $action->setIcon('fas fa-edit'))
             ->add(Crud::PAGE_DETAIL, Action::INDEX)
-            ->update(Crud::PAGE_DETAIL, Action::INDEX, fn (Action $action) => $action->setIcon('fas fa-undo-alt'))
+            ->update(Crud::PAGE_DETAIL, Action::INDEX, fn(Action $action) => $action->setIcon('fas fa-undo-alt'))
             ->add(Crud::PAGE_DETAIL, Action::DELETE)
-
             ->add(Crud::PAGE_EDIT, Action::SAVE_AND_RETURN)
-            ->update(Crud::PAGE_EDIT, Action::SAVE_AND_RETURN, fn (Action $action) => $action->setIcon('fas fa-save'))
+            ->update(Crud::PAGE_EDIT, Action::SAVE_AND_RETURN, fn(Action $action) => $action->setIcon('fas fa-save'))
             ->add(Crud::PAGE_EDIT, Action::SAVE_AND_CONTINUE)
-
             ->add(Crud::PAGE_NEW, Action::SAVE_AND_RETURN)
-            ->update(Crud::PAGE_NEW, Action::SAVE_AND_RETURN, fn (Action $action) => $action->setIcon('fas fa-save'))
+            ->update(Crud::PAGE_NEW, Action::SAVE_AND_RETURN, fn(Action $action) => $action->setIcon('fas fa-save'))
             ->add(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER)
-            ->update(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER, fn (Action $action) => $action->setIcon('fas fa-plus'));
+            ->update(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER, fn(Action $action) => $action->setIcon('fas fa-plus'));
     }
 
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linktoRoute('Api documentation', 'fa fa-toolbox', 'api_doc');
 
         yield MenuItem::section('Projets');
         yield MenuItem::linkToCrud('Projet catégories', 'fas fa-archive', ProjectCategory::class);

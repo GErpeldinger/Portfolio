@@ -1,10 +1,15 @@
 @import './normalize';
 
+// PACKAGES
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 // FONTS
 @import './fonts/baloo2';
 
 // APP
 @import './variables';
+@import './animation';
 @import './main';
 
 // NAVBAR
@@ -19,8 +24,11 @@
 
 // PROJECTS
 @import './routes/Projects';
-@import 'components/projects/ProjectCard';
-@import 'components/projects/ProjectsList';
-@import 'components/projects/ProjectsNav';
-@import 'components/projects/TagsList';
-@import 'components/projects/Tag';
+@import './routes/Project';
+@import 'components/project/ProjectCard';
+@import 'components/project/ProjectsList';
+@import 'components/project/ProjectsNav';
+@import 'components/project/TagsList';
+@import 'components/project/Tag';
+@import 'components/project/Carousel';
+@import 'components/project/ImageCarousel';

@@ -20,7 +20,8 @@ export const ROUTES = {
 }
 
 export const API_LINKS = {
-    projects: API_URL + '/project_categories'
+    projects: API_URL + '/project_categories',
+    project: API_URL + '/projects/'
 }
 
 export const LINKS = {

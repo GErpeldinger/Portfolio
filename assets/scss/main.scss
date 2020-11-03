@@ -6,18 +6,47 @@ body {
 
 main {
     margin-bottom: 70px;
+    height: calc(100vh - 70px);
+    overflow-y: scroll;
 
     @media screen and #{$mediumDeviceMinWidth} {
         margin-bottom: 128px;
+        height: calc(100vh - 128px);
     }
 
     @media screen and #{$largeDeviceMinWidth} {
         margin-bottom: unset;
         margin-left: 100px;
+        height: 100vh;
+    }
+}
+
+h1 {
+    font-size: 24px;
+
+    @media screen and #{$mediumDeviceMinWidth} {
+        font-size: 2em;
     }
 }
 
 h2 {
+    font-size: 20px;
     font-variant-caps: small-caps;
     text-align: center;
+
+    @media screen and #{$mediumDeviceMinWidth} {
+        font-size: 1.6em;
+    }
+}
+
+.jumbotron {
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: transparentize(lighten($tertiary, 60), 0.1);
+    border-radius: 15px;
+    color: $tertiary;
+
+    @media screen and #{$mediumDeviceMinWidth} {
+        padding: 30px 100px;
+    }
 }

@@ -36,12 +36,12 @@ class ProjectImageFixtures extends Fixture implements DependentFixtureInterface
             'image' => '5f9d70fc450dd_Hacocktail_Index.jpg',
             'isCover' => true
         ],
-        'Select Quizz Theme Hacocktail' => [
+        'Quizz Selection Thème Hacocktail' => [
             'project' => 'project_2',
             'image' => '5f9d7109bb5c9_Hacocktail_Select_Quizz_Theme.jpg',
             'isCover' => false
         ],
-        'Play Quizz Hacocktail' => [
+        'Quizz Play Hacocktail' => [
             'project' => 'project_2',
             'image' => '5f9d75d417cf7_Hacocktail_Play_Quizz.jpg',
             'isCover' => false
@@ -51,7 +51,7 @@ class ProjectImageFixtures extends Fixture implements DependentFixtureInterface
             'image' => '5f9d7984a070b_Joshua_Index.jpg',
             'isCover' => true
         ],
-        'Connection Joshua' => [
+        'Connexion Joshua' => [
             'project' => 'project_3',
             'image' => '5f9d7994cffb9_Joshua_Connection.jpg',
             'isCover' => false
@@ -71,7 +71,7 @@ class ProjectImageFixtures extends Fixture implements DependentFixtureInterface
             'image' => '5f9d7bb903275_Archives_Introduction.jpg',
             'isCover' => false
         ],
-        'Gallery Archives de Bdx Métropole' => [
+        'Gallerie Archives de Bdx Métropole' => [
             'project' => 'project_1',
             'image' => '5f9d7bc42dc3c_Archives_Gallery.jpg',
             'isCover' => false
@@ -79,6 +79,16 @@ class ProjectImageFixtures extends Fixture implements DependentFixtureInterface
         'Contact Archives de Bdx Métropole' => [
             'project' => 'project_1',
             'image' => '5f9d7bd39bab4_Archives_Contact.jpg',
+            'isCover' => false
+        ],
+        'Partie Enfant Loopy' => [
+            'project' => 'project_4',
+            'image' => '5fa08f243c682_Loopy_Enfant.jpg',
+            'isCover' => false
+        ],
+        'Partie Docteur Loopy' => [
+            'project' => 'project_4',
+            'image' => '5fa102b72bff2_Loopy_Docteur.jpg',
             'isCover' => false
         ]
     ];

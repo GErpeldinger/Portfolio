@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import axios from 'axios';
 
-export function useGetAxios(url, getLd = true) {
+export function useGetWithAxios(url, getLd = false) {
     const [loading, setLoading] = useState(true)
     const [items, setItems] = useState({})
 
@@ -9,7 +9,7 @@ export function useGetAxios(url, getLd = true) {
         axios.get(url, { headers: { 'accept': `application/${getLd ? 'ld+' : ''}json` } })
             .then(response => response.data)
             .then(data => {
-                if (!getLd || url.match(/\/\d$/g)) setItems(data)
+                if (!getLd) setItems(data)
                 else setItems(data['hydra:member'])
                 setLoading(false)
             })

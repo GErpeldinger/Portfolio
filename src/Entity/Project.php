@@ -14,7 +14,7 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read:projects"}},
+ *     normalizationContext={"groups"={"read:project"}},
  *     collectionOperations={},
  *     itemOperations={"GET"},
  * )
@@ -32,25 +32,33 @@ class Project
     private $id;
 
     /**
-     * @Groups({"read:projects"})
+     * @Groups({"read:all:project", "read:project"})
      * @ORM\Column(type="string", length=100)
      */
     private $name;
 
     /**
-     * @Groups({"read:projects"})
+     * @Groups({"read:all:project"})
      * @ORM\Column(type="string", length=100)
      * @ApiProperty(identifier=true)
      */
     private $slug;
 
     /**
+     * @Groups({"read:project"})
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
+    /**
+     * @Groups({"read:project"})
+     * @SerializedName("images")
      * @ORM\OneToMany(targetEntity=ProjectImage::class, mappedBy="project", orphanRemoval=true)
      */
     private $projectImages;
 
     /**
-     * @Groups({"read:projects"})
+     * @Groups({"read:all:project", "read:project"})
      * @ORM\ManyToMany(targetEntity=Tag::class, inversedBy="projects")
      */
     private $tags;
@@ -65,6 +73,24 @@ class Project
      * @ORM\Column(type="date")
      */
     private $startDate;
+
+    /**
+     * @Groups({"read:project"})
+     * @ORM\Column(type="string", length=2083, nullable=true)
+     */
+    private $github;
+
+    /**
+     * @Groups({"read:project"})
+     * @ORM\Column(type="string", length=2083, nullable=true)
+     */
+    private $link;
+
+    /**
+     * @Groups({"read:project"})
+     * @ORM\Column(type="string", length=2083, nullable=true)
+     */
+    private $video;
 
     public function __construct()
     {
@@ -106,6 +132,18 @@ class Project
         return $this;
     }
 
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
     /**
      * @return Collection|ProjectImage[]
      */
@@ -115,7 +153,7 @@ class Project
     }
 
     /**
-     * @Groups({"read:projects"})
+     * @Groups({"read:all:project"})
      * @SerializedName("imagePath")
      */
     public function getPrincipalProjectImagePath(): ?string
@@ -191,6 +229,42 @@ class Project
     public function setStartDate(\DateTimeInterface $startDate): self
     {
         $this->startDate = $startDate;
+
+        return $this;
+    }
+
+    public function getGithub(): ?string
+    {
+        return $this->github;
+    }
+
+    public function setGithub(?string $github): self
+    {
+        $this->github = $github;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(?string $link): self
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    public function getVideo(): ?string
+    {
+        return $this->video;
+    }
+
+    public function setVideo(?string $video): self
+    {
+        $this->video = $video;
 
         return $this;
     }

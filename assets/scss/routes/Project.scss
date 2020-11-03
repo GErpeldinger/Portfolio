@@ -1,0 +1,64 @@
+.Project {
+    padding-top: 50px;
+    min-height: calc(100% - 50px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+
+    > a:first-of-type {
+        position: fixed;
+        top: 0;
+        left: 15px;
+        color: $secondary;
+        text-decoration: none;
+        background-color: $tertiary;
+        padding: 20px 0;
+
+        &:hover {
+            color: $primary;
+        }
+
+        svg {
+            margin-bottom: -1px;
+        }
+
+        @media screen and #{$largeDeviceMinWidth} {
+            left: 130px;
+            background-color: unset;
+        }
+    }
+
+    > div:first-of-type {
+        width: 80%;
+        margin: 0 auto;
+
+        h1 {
+            text-align: center;
+        }
+
+        > div:first-of-type {
+            display: flex;
+            justify-content: flex-end;
+
+            a {
+                color: $secondary;
+                margin: 0 5px;
+
+                &:hover {
+                    color: $primary;
+                    animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                }
+            }
+        }
+
+        @media screen and #{$largeDeviceMinWidth} {
+            width: 800px;
+        }
+    }
+
+    @media screen and #{$largeDeviceMinWidth} {
+        margin-top: unset;
+    }
+}

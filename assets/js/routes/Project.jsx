@@ -1,9 +1,41 @@
-import React from 'react';
+import React, { Fragment, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { useGetWithAxios } from "../utils/hooks";
+import { API_LINKS, ROUTES } from "../utils/constants";
+import parser from 'html-react-parser';
+
+import Loader from "../components/loader/Loader";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowCircleLeft, faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons";
+import TagsList from "../components/project/TagsList";
+import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
+import Carousel from "../components/project/Carousel";
 
 const Project = () => {
+    const { slug } = useParams()
+    const { items: project, load, loading } = useGetWithAxios(API_LINKS.project + slug)
+
+    useEffect(() => {
+        load()
+    }, [])
+
+    if (loading) return <Loader/>
+
     return (
         <div className="Project">
-            <p>OKLM</p>
+            <Link to={ROUTES.projects}><FontAwesomeIcon icon={faArrowCircleLeft}/> Revenir à la liste des projets</Link>
+            <div>
+                <h1>{project.name}</h1>
+                <div>
+                    {project.github && <a href={project.github} target="_blank"><FontAwesomeIcon icon={faGithubSquare} size="2x"/></a>}
+                    {project.link && <a href={project.link} target="_blank"><FontAwesomeIcon icon={faExternalLinkSquareAlt} size="2x"/></a>}
+                </div>
+                <div className="jumbotron">
+                    {parser(project.description)}
+                </div>
+                <TagsList tags={project.tags}/>
+                <Carousel video={project.video} images={project.images}/>
+            </div>
         </div>
     );
 }

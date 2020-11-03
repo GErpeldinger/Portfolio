@@ -1,0 +1,22 @@
+.ImageCarousel {
+    cursor: zoom-in;
+    border-radius: 10px;
+    width: 90%;
+    height: 90%;
+    margin: 23px auto;
+}
+
+.Modal {
+    cursor: zoom-out;
+    height: 90vh;
+    width: 90vw;
+    margin: 5vh 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 100%;
+        width: auto;
+    }
+}

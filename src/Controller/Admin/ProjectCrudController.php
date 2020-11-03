@@ -10,9 +10,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class ProjectCrudController extends AbstractCrudController
 {
@@ -28,7 +32,8 @@ class ProjectCrudController extends AbstractCrudController
             ->setEntityLabelInSingular('projet')
             ->setEntityLabelInPlural('projets')
             ->setPageTitle(crud::PAGE_INDEX, 'Liste des %entity_label_plural%')
-            ->setDefaultSort(['category' => 'ASC', 'startDate' => 'ASC']);
+            ->setDefaultSort(['category' => 'ASC', 'startDate' => 'ASC'])
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
     }
 
     public function configureFilters(Filters $filters): Filters
@@ -38,10 +43,13 @@ class ProjectCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        $infoPanel = FormField::addPanel('Informations', 'fas fa-info-circle');
         $id = IdField::new('id');
         $name = TextField::new('name', 'Nom');
         $slug = SlugField::new('slug')
             ->setTargetFieldName('name');
+        $description = TextareaField::new('description', 'Description')
+            ->setFormType(CKEditorType::class);
         $category = AssociationField::new('category', 'Catégorie')
             ->setRequired(true);
         $startDate = DateField::new('startDate', 'Date de début');
@@ -51,14 +59,19 @@ class ProjectCrudController extends AbstractCrudController
             ->setRequired(true);
         $tagsShow = CollectionField::new('tags', 'Tags');
 
+        $linkPanel = FormField::addPanel('Liens', 'fas fa-link');
+        $link = UrlField::new('link', 'Lien vers le site');
+        $github = UrlField::new('github', 'GitHub');
+        $video = UrlField::new('video', 'Vidéo');
+
         $result = [$name, $category, $imagesNumber, $tags, $startDate];
 
         if ($pageName === Crud::PAGE_DETAIL) {
-            $result = [$id, $name, $slug, $category, $startDate, $images, $tagsShow];
+            $result = [$infoPanel, $id, $name, $slug, $description, $category, $startDate, $images, $tagsShow, $linkPanel, $link, $github, $video];
         }
 
         if ($pageName === Crud::PAGE_NEW || $pageName === Crud::PAGE_EDIT) {
-            $result = [$name, $slug, $category, $startDate, $tags];
+            $result = [$infoPanel, $name, $slug, $description, $category, $tags, $startDate, $linkPanel, $link, $github, $video];
         }
 
         return $result;
