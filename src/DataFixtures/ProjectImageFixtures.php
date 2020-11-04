@@ -71,7 +71,7 @@ class ProjectImageFixtures extends Fixture implements DependentFixtureInterface
             'image' => '5f9d7bb903275_Archives_Introduction.jpg',
             'isCover' => false
         ],
-        'Gallerie Archives de Bdx Métropole' => [
+        'Galerie Archives de Bdx Métropole' => [
             'project' => 'project_1',
             'image' => '5f9d7bc42dc3c_Archives_Gallery.jpg',
             'isCover' => false

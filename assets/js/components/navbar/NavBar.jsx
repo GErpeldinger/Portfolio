@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { LARGE_DEVICE_MIN_WIDTH, LINKS, ROUTES } from "../../utils/constants";
 import { faEnvelope, faEye, faHome, faTools } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { LARGE_DEVICE_MIN_WIDTH, LINKS, ROUTES } from "../../utils/constants";
-
 import MenuLink from "./MenuLink";
 import VerticalLine from "./VerticalLine";
 

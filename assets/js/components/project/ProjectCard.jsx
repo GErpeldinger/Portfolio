@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
+import PropTypes from "prop-types";
 import { useMediaQuery } from 'react-responsive';
+import { Link } from "react-router-dom";
 import { LARGE_DEVICE_MIN_WIDTH, MEDIUM_DEVICE_MIN_WIDTH, ROUTES } from "../../utils/constants";
 import { generateUrlImageResizer } from '../../utils/functions';
-import { Link } from "react-router-dom";
-
 import TagsList from "./TagsList";
 
-const ProjectCard = ({ id, project }) => {
+const ProjectCard = ({ project }) => {
     const { imagePath, name, slug, tags } = project
 
     const isTablet = useMediaQuery({ query: MEDIUM_DEVICE_MIN_WIDTH })
@@ -26,7 +26,7 @@ const ProjectCard = ({ id, project }) => {
     const className = checkUrlIfHashMatchProject(slug)
 
     return (
-        <div className={className} id={id}>
+        <div className={className} id={slug}>
             <div className="title-bar">
                 <div className="fake-button">
                     <div className="fake-button-red"/>
@@ -58,6 +58,20 @@ const checkUrlIfHashMatchProject = (slug) => {
     }
 
     return className;
+}
+
+ProjectCard.propTypes = {
+    project: PropTypes.exact({
+        name: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
+        tags: PropTypes.arrayOf(PropTypes.exact({
+            name: PropTypes.string.isRequired,
+            description: PropTypes.string,
+            link: PropTypes.string,
+            category: PropTypes.string.isRequired
+        }).isRequired).isRequired,
+        imagePath: PropTypes.string
+    }).isRequired
 }
 
 export default ProjectCard;

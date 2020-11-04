@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Loader from 'react-loader-spinner'
 import { COLORS } from "../../utils/constants";
+import Loader from 'react-loader-spinner'
 
 const CircularLoader = () => {
     const [positionX, setPositionX] = useState(0)

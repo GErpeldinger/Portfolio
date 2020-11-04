@@ -3,6 +3,7 @@
 // PACKAGES
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
 
 // FONTS
 @import './fonts/baloo2';
@@ -31,4 +32,4 @@
 @import 'components/project/TagsList';
 @import 'components/project/Tag';
 @import 'components/project/Carousel';
-@import 'components/project/ImageCarousel';
+@import 'components/project/Gallery';

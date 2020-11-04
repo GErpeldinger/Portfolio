@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { useGetWithAxios } from "../utils/hooks";
 import { API_LINKS, EXTRA_LARGE_DEVICE_MIN_WIDTH } from "../utils/constants";
-
 import Loader from "../components/loader/Loader";
 import ProjectsList from "../components/project/ProjectsList";
 import ProjectsNav from "../components/project/ProjectsNav";

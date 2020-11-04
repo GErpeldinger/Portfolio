@@ -1,0 +1,23 @@
+.RenderVideo {
+    .playButton {
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        height: 50px;
+        width: 100px;
+        margin: auto;
+        color: black;
+
+        &:hover {
+            color: #c4302b;
+        }
+    }
+
+    .video {
+        width: 90%;
+        height: calc(100vh - 80px);
+    }
+}

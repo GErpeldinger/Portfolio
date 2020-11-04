@@ -1,6 +1,28 @@
-.CarouselVideo {
+.VideoCarousel {
     height: 80%;
     width: 90%;
     margin: 20px auto;
     border-radius: 10px;
+}
+
+.ImageCarousel {
+    cursor: zoom-in;
+    border-radius: 10px;
+    width: 90%;
+    height: 90%;
+    margin: 23px auto;
+}
+
+.ModalCarousel {
+    padding-top: 5px;
+    background-color: black;
+
+    .exitButton {
+        z-index: 1;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        color: $secondary;
+        cursor: pointer;
+    }
 }

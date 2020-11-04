@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from "prop-types";
 import Popover from "@material-ui/core/Popover";
 
-const Tag = ({ category, description, link, children }) => {
+const Tag = ({ children, description, link, category }) => {
     const [anchorEl, setAnchorEl] = useState(null)
     const handlePopoverOpen = (event) => {
         setAnchorEl(event.currentTarget);
@@ -27,14 +28,20 @@ const Tag = ({ category, description, link, children }) => {
                          vertical: 'bottom',
                          horizontal: 'center',
                      }}
-                     onClose={handlePopoverClose}
-            >
+                     onClose={handlePopoverClose}>
                 <h4>{children} - {category}</h4>
                 <p>{description}</p>
                 <p>Cliquer pour plus d'informations.</p>
             </Popover>
         </li>
     );
+}
+
+Tag.propTypes = {
+    children: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    link: PropTypes.string,
+    category: PropTypes.string.isRequired
 }
 
 export default Tag;
