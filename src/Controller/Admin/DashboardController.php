@@ -7,6 +7,7 @@ use App\Entity\Link;
 use App\Entity\Project;
 use App\Entity\ProjectCategory;
 use App\Entity\ProjectImage;
+use App\Entity\Skill;
 use App\Entity\Tag;
 use App\Entity\TagCategory;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
@@ -90,6 +91,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linktoRoute('Api documentation', 'fa fa-toolbox', 'api_doc');
 
+        yield MenuItem::section('Accueil');
+        yield MenuItem::linkToCrud('Compétences', 'fas fa-tools', Skill::class);
+
         yield MenuItem::section('Projets');
         yield MenuItem::linkToCrud('Projet catégories', 'fas fa-archive', ProjectCategory::class);
         yield MenuItem::linkToCrud('Liste des projets', 'fas fa-project-diagram', Project::class);
@@ -100,7 +104,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Autres');
         yield MenuItem::subMenu('Liens', 'fas fa-link')
             ->setSubItems([
-                MenuItem::linkToCrud('Email', 'fas fa-envelope', Link::class)
+                MenuItem::linkToCrud('Contact', 'fas fa-envelope', Link::class)
                     ->setController(EditLinkController::class)
                     ->setEntityId($linkRepository->findOneBy(['name' => Link::CONTACT['name']])->getId())
                     ->setAction(Action::EDIT),

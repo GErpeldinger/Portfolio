@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     app.path.project_image: /uploads/images/project
+    app.path.skill_icon: /uploads/images/skill
 
 services:
     # default configuration for services in *this* file
