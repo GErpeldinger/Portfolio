@@ -14,7 +14,7 @@ const Loader = () => {
     }
 
     return (
-        <LinearProgress variant="query" className="LinearLoader"/>
+        <LinearProgress className="LinearLoader"/>
     );
 }
 

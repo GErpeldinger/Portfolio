@@ -32,7 +32,7 @@ class TagFixtures extends Fixture implements DependentFixtureInterface
             'category' => 'tag_category_1'
         ],
         'JavaScript' => [
-            'description' => 'JS est un langage de programmation de scripts principalement employé dans les pages web interactives et est une partie essentielle des applications web. Avec le HTML et le CSS, JavaScript est parfois considéré comme \'une des technologies cœur du Web.',
+            'description' => 'JS est un langage de programmation de scripts principalement employé dans les pages web interactives et est une partie essentielle des applications web. Avec le HTML et le CSS, JavaScript est parfois considéré comme l\'une des technologies cœur du Web.',
             'link' => 'https://developer.mozilla.org/fr/docs/Web/JavaScript',
             'category' => 'tag_category_1'
         ],

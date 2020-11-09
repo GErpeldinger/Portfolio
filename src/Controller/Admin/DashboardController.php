@@ -89,7 +89,8 @@ class DashboardController extends AbstractDashboardController
         $linkRepository = $this->getDoctrine()->getManager()->getRepository(Link::class);
 
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linktoRoute('Api documentation', 'fa fa-toolbox', 'api_doc');
+        yield MenuItem::linktoRoute('Api documentation', 'fa fa-toolbox', 'api_doc')
+            ->setLinkTarget('_blank');
 
         yield MenuItem::section('Accueil');
         yield MenuItem::linkToCrud('Compétences', 'fas fa-tools', Skill::class);
