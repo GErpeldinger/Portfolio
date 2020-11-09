@@ -17,7 +17,6 @@ const App = () => {
                     <main>
                         <Switch>
                             <Route exact path={ROUTES.home}/>
-                            <Route path={ROUTES.skill}/>
                             <Route exact path={ROUTES.projects} component={Projects}/>
                             <Route path={ROUTES.project} component={Project}/>
                         </Switch>

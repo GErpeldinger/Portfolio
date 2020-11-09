@@ -2,27 +2,28 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Admin;
+use App\Entity\Link;
 use App\Helper\EasyAdmin\ChangeRedirectWhenEdit;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class EditEmailController extends AbstractCrudController
+class EditLinkController extends AbstractCrudController
 {
     use ChangeRedirectWhenEdit;
 
+
     public static function getEntityFqcn(): string
     {
-        return Admin::class;
+        return Link::class;
     }
 
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle(Crud::PAGE_EDIT, 'Modifier l\'email');
+            ->setPageTitle(Crud::PAGE_EDIT, 'Modifier le lien');
     }
 
     public function configureActions(Actions $actions): Actions
@@ -34,8 +35,8 @@ class EditEmailController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        $email = EmailField::new('email', 'Nouveau email');
+        $url = TextField::new('url', 'Nouvelle url');
 
-        return [$email];
+        return [$url];
     }
 }

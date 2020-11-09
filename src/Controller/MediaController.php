@@ -9,7 +9,10 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ImageController extends AbstractController
+/**
+ * @Route("/media", name="media_")
+ */
+class MediaController extends AbstractController
 {
     private string $cachePath;
     private string $publicPath;
@@ -21,7 +24,8 @@ class ImageController extends AbstractController
     }
 
     /**
-     * @Route("/media/resize/{width}/{height}/{path}/{extension}", requirements={"width"="\d+", "height"="\d+", "path"=".+"}, name="image_resizer")
+     * @Route("/resize/{width}/{height}/{path}/{extension}", name="image_resizer",
+     *      requirements={"width"="\d+", "height"="\d+", "path"=".+", "extension"=".+"})
      * @param int $width
      * @param int $height
      * @param string $path

@@ -8,6 +8,7 @@ import Modal from "@material-ui/core/Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import Gallery from "./Gallery";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 const Carousel = ({ video, images }) => {
     const [open, setOpen] = useState(false)
@@ -28,8 +29,9 @@ const Carousel = ({ video, images }) => {
         <Fragment>
 
             <Slider {...settings}>
-                {images.map(image => <div key={image.name}>
-                    <img className="ImageCarousel" alt={image.name} src={generateUrlImageResizer(400, 235, image.path)} onClick={handleZoomIn}/>
+                {images.map((image, index) => <div key={image.name} className="ImageCarousel">
+                    {video && index === 0 && <div className="video"><FontAwesomeIcon icon={faYoutube} size="3x"/></div>}
+                    <img alt={image.name} src={generateUrlImageResizer(400, 235, image.path)} onClick={handleZoomIn}/>
                 </div>)}
             </Slider>
 

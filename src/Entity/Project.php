@@ -16,7 +16,7 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
  * @ApiResource(
  *     normalizationContext={"groups"={"read:project"}},
  *     collectionOperations={},
- *     itemOperations={"GET"},
+ *     itemOperations={"GET"}
  * )
  * @ORM\Entity(repositoryClass=ProjectRepository::class)
  * @UniqueEntity("name", message="Le projet {{ value }} existe déjà.")

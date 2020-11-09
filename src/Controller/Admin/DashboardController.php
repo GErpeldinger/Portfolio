@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Admin;
+use App\Entity\Link;
 use App\Entity\Project;
 use App\Entity\ProjectCategory;
 use App\Entity\ProjectImage;
@@ -48,11 +49,11 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::linkToCrud('Modifier email', 'fas fa-at', Admin::class)
                     ->setController(EditEmailController::class)
                     ->setEntityId($admin->getId())
-                    ->setAction('edit'),
+                    ->setAction(Action::EDIT),
                 MenuItem::linkToCrud('Modifier password', 'fas fa-key', Admin::class)
                     ->setController(EditPasswordController::class)
                     ->setEntityId($admin->getId())
-                    ->setAction('edit'),
+                    ->setAction(Action::EDIT),
                 MenuItem::linkToLogout('Déconnexion', 'a fa-sign-out')
             ]);
     }
@@ -84,6 +85,8 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
+        $linkRepository = $this->getDoctrine()->getManager()->getRepository(Link::class);
+
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linktoRoute('Api documentation', 'fa fa-toolbox', 'api_doc');
 
@@ -94,9 +97,26 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Tag catégories', 'fas fa-inbox', TagCategory::class);
         yield MenuItem::linkToCrud('Liste des tags', 'fas fa-tags', Tag::class);
 
+        yield MenuItem::section('Autres');
+        yield MenuItem::subMenu('Liens', 'fas fa-link')
+            ->setSubItems([
+                MenuItem::linkToCrud('Email', 'fas fa-envelope', Link::class)
+                    ->setController(EditLinkController::class)
+                    ->setEntityId($linkRepository->findOneBy(['name' => Link::CONTACT['name']])->getId())
+                    ->setAction(Action::EDIT),
+                MenuItem::linkToCrud('LinkedIn', 'fab fa-linkedin', Link::class)
+                    ->setController(EditLinkController::class)
+                    ->setEntityId($linkRepository->findOneBy(['name' => Link::LINKEDIN['name']])->getId())
+                    ->setAction(Action::EDIT),
+                MenuItem::linkToCrud('GitHub', 'fab fa-github', Link::class)
+                    ->setController(EditLinkController::class)
+                    ->setEntityId($linkRepository->findOneBy(['name' => Link::GITHUB['name']])->getId())
+                    ->setAction(Action::EDIT)
+            ]);
+
+
         yield MenuItem::section('Site');
-        yield MenuItem::linktoRoute('Accueil', 'fa fa-home', 'index');
-        yield MenuItem::linktoRoute('Compétences', 'fas fa-tools', 'skill');
-        yield MenuItem::linktoRoute('Projets', 'fas fa-eye', 'projects');
+        yield MenuItem::linktoRoute('Accueil', 'fa fa-home', 'index', ['reactRouting' => '']);
+        yield MenuItem::linktoRoute('Projets', 'fas fa-eye', 'index', ['reactRouting' => 'projets']);
     }
 }

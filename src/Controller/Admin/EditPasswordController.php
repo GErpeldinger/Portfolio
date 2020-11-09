@@ -72,7 +72,7 @@ class EditPasswordController extends AbstractCrudController
         $plainPassword = TextField::new('plainPassword', 'Nouveau password')
             ->setFormType(PasswordType::class)
             ->setRequired(true);
-        $password = TextField::new('plainPasswordTwo', 'Répéter password')
+        $password = TextField::new('plainPasswordTwo', 'Répéter nouveau password')
             ->setFormType(PasswordType::class)
             ->setRequired(true);
 

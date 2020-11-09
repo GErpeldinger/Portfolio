@@ -1,24 +1,27 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { LARGE_DEVICE_MIN_WIDTH, LINKS, ROUTES } from "../../utils/constants";
-import { faEnvelope, faEye, faHome, faTools } from '@fortawesome/free-solid-svg-icons';
+import { API_LINKS, LARGE_DEVICE_MIN_WIDTH, ROUTES } from "../../utils/constants";
+import { useGetWithAxios } from "../../utils/hooks";
+import { faEnvelope, faEye, faHome } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import MenuLink from "./MenuLink";
 import VerticalLine from "./VerticalLine";
 
 const NavBar = () => {
     const isDesktop = useMediaQuery({ query: LARGE_DEVICE_MIN_WIDTH })
+    const {items: links, load, loading} = useGetWithAxios(API_LINKS.links)
+
+    useEffect(() => load(), [])
 
     const internalLinks = <Fragment>
         <MenuLink url={ROUTES.home} icon={faHome}>Accueil</MenuLink>
-        <MenuLink url={ROUTES.skill} icon={faTools}>Compétences</MenuLink>
         <MenuLink url={ROUTES.projects} icon={faEye}>Projets</MenuLink>
     </Fragment>
 
-    const externalLinks = <Fragment>
-        <MenuLink url={LINKS.email} icon={faEnvelope} external>Contact</MenuLink>
-        <MenuLink url={LINKS.linkedin} icon={faLinkedin} external>LinkedIn</MenuLink>
-        <MenuLink url={LINKS.github} icon={faGithub} external>GitHub</MenuLink>
+    const externalLinks = !loading && <Fragment>
+        <MenuLink url={links[0].href} icon={faEnvelope} external>Contact</MenuLink>
+        <MenuLink url={links[1].href} icon={faLinkedin} external>LinkedIn</MenuLink>
+        <MenuLink url={links[2].href} icon={faGithub} external>GitHub</MenuLink>
     </Fragment>
 
     let value = <Fragment>{internalLinks}{externalLinks}</Fragment>

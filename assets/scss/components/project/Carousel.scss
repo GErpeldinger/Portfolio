@@ -1,16 +1,25 @@
-.VideoCarousel {
-    height: 80%;
-    width: 90%;
-    margin: 20px auto;
-    border-radius: 10px;
-}
-
 .ImageCarousel {
     cursor: zoom-in;
-    border-radius: 10px;
-    width: 90%;
-    height: 90%;
-    margin: 23px auto;
+
+    .video {
+        color: $tertiary;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    img {
+        border-radius: 10px;
+        width: 90%;
+        height: 90%;
+        margin: 20px auto;
+    }
+
+    &:hover {
+        .video {
+            color: #c4302b;
+        }
+    }
 }
 
 .ModalCarousel {
