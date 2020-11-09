@@ -1,5 +1,5 @@
-import { createMuiTheme } from "@material-ui/core/styles";
-import { BREAKPOINTS, COLORS } from "./constants";
+import { createMuiTheme } from '@material-ui/core/styles';
+import { BREAKPOINTS, COLORS } from './constants';
 
 export const THEME = createMuiTheme({
     breakpoints: {

@@ -1,14 +1,14 @@
 import React, { Fragment, useState } from 'react';
-import PropTypes from "prop-types";
-import { useMediaQuery } from "react-responsive/src";
-import { MEDIUM_DEVICE_MIN_WIDTH } from "../../utils/constants";
-import { generateUrlImageResizer } from "../../utils/functions";
+import PropTypes from 'prop-types';
+import { useMediaQuery } from 'react-responsive/src';
+import { MEDIUM_DEVICE_MIN_WIDTH } from '../../utils/constants';
+import { generateUrlImageResizer } from '../../utils/functions';
 import Slider from 'react-slick';
-import Modal from "@material-ui/core/Modal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-import Gallery from "./Gallery";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import Modal from '@material-ui/core/Modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import Gallery from './Gallery';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 const Carousel = ({ video, images }) => {
     const [open, setOpen] = useState(false)

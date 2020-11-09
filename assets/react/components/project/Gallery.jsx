@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
-import { generateUrlImageResizer } from "../../utils/functions";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ImageGallery from "react-image-gallery";
+import { generateUrlImageResizer } from '../../utils/functions';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ImageGallery from 'react-image-gallery';
 
 // TODO : Focus on image clicked ( getRef from ImageGallery )
 const Gallery = ({ video, images }) => {

@@ -5,6 +5,7 @@ import { THEME } from './utils/themeMUI'
 import { ROUTES } from "./utils/constants";
 
 import NavBar from "./components/navbar/NavBar";
+import Home from "./routes/Home";
 import Projects from "./routes/Projects";
 import Project from "./routes/Project";
 
@@ -16,7 +17,7 @@ const App = () => {
                     <NavBar/>
                     <main>
                         <Switch>
-                            <Route exact path={ROUTES.home}/>
+                            <Route exact path={ROUTES.home} component={Home}/>
                             <Route exact path={ROUTES.projects} component={Projects}/>
                             <Route path={ROUTES.project} component={Project}/>
                         </Switch>

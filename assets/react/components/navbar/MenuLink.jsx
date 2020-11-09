@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useMediaQuery } from "react-responsive";
-import { Link, useLocation } from "react-router-dom";
-import { LARGE_DEVICE_MIN_WIDTH, MEDIUM_DEVICE_MIN_WIDTH } from "../../utils/constants";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useMediaQuery } from 'react-responsive';
+import { Link, useLocation } from 'react-router-dom';
+import { LARGE_DEVICE_MIN_WIDTH, MEDIUM_DEVICE_MIN_WIDTH } from '../../utils/constants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const MenuLink = ({ url, icon, external, children }) => {
     const isTablet = useMediaQuery({ query: MEDIUM_DEVICE_MIN_WIDTH })

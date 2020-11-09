@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
-import { ADMIN_URL, API_URL, APP_LOGOUT } from "../../utils/constants";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignOutAlt, faToolbox, faUserCog } from "@fortawesome/free-solid-svg-icons";
+import { ADMIN_URL, API_URL, APP_LOGOUT } from '../../utils/constants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt, faToolbox, faUserCog } from '@fortawesome/free-solid-svg-icons';
 
 const AdminNavBar = () => {
     const [isOpen, setIsOpen] = useState(false)

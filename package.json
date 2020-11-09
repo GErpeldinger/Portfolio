@@ -27,6 +27,7 @@
         "@fortawesome/free-brands-svg-icons": "^5.15.1",
         "@fortawesome/free-solid-svg-icons": "^5.15.1",
         "@fortawesome/react-fontawesome": "^0.1.11",
+        "@fullpage/react-fullpage": "^0.1.18",
         "@material-ui/core": "^4.11.0",
         "ckeditor": "^4.0.0",
         "html-react-parser": "^0.14.0",

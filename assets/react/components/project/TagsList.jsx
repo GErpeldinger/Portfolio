@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from "prop-types";
-import Tag from "./Tag";
+import PropTypes from 'prop-types';
+import Tag from './Tag';
 
 const TagsList = ({ tags }) => {
     return (

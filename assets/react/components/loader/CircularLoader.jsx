@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { COLORS } from "../../utils/constants";
+import { COLORS } from '../../utils/constants';
 import Loader from 'react-loader-spinner'
 
 const CircularLoader = () => {

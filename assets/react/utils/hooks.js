@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState } from 'react';
 import axios from 'axios';
 
 export function useGetWithAxios(url, getLd = false) {

@@ -23,6 +23,10 @@
 @import './components/loader/CircularLoader';
 @import './components/loader/LinearLoader';
 
+// HOME
+@import './routes/Home';
+@import './components/home/Homepage';
+
 // PROJECTS
 @import './routes/Projects';
 @import './routes/Project';

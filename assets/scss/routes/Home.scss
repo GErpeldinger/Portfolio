@@ -1,0 +1,28 @@
+.Home {
+    animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+
+    #menu {
+        position: fixed;
+        top: 25px;
+        right: 10%;
+        list-style: none;
+        display: flex;
+        z-index: 1;
+
+        li {
+            a {
+                color: $secondary;
+                text-decoration: none;
+                margin: 0 5px;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+
+        .active a {
+            color: $primary;
+        }
+    }
+}

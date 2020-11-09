@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
-import { Link } from "react-router-dom";
-import { LARGE_DEVICE_MIN_WIDTH, MEDIUM_DEVICE_MIN_WIDTH, ROUTES } from "../../utils/constants";
+import { Link } from 'react-router-dom';
+import { LARGE_DEVICE_MIN_WIDTH, MEDIUM_DEVICE_MIN_WIDTH, ROUTES } from '../../utils/constants';
 import { generateUrlImageResizer } from '../../utils/functions';
-import TagsList from "./TagsList";
+import TagsList from './TagsList';
 
 const ProjectCard = ({ project }) => {
     const { imagePath, name, slug, tags } = project

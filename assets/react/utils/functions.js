@@ -1,4 +1,4 @@
-import { APP_URL } from "./constants";
+import { APP_URL } from './constants';
 
 export function generateUrlImageResizer(width, height, path) {
     let extension = path.match(/(?<=.)[a-z]*$/g)[0]
