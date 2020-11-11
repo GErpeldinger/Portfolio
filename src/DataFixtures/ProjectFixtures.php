@@ -52,7 +52,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             'tags' => ['tag_1', 'tag_3', 'tag_4', 'tag_5', 'tag_6', 'tag_13'],
             'link' => '',
             'github' => '',
-            'video' => 'https://www.youtube.com/embed/xvNe82WsPzk'
+            'video' => 'https://www.youtube.com/embed/xvNe82WsPzk?autoplay=1'
         ],
         'Wild series' => [
             'slug' => 'wild-series',

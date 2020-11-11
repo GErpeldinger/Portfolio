@@ -41,7 +41,7 @@ const ProjectCard = ({ project }) => {
                     <TagsList tags={tags}/>
                     <Link to={ROUTES.projects + '/' + slug} className="tag">Cliquer ici pour voir plus...</Link>
                 </div>}
-                {!isDesktop && <Link to={ROUTES.projects + '/' + slug} className="tag">Cliquer ici pour voir plus...</Link>}
+                {!isDesktop && <Link to={ROUTES.projects + '/' + slug} className="tag">Voir plus...</Link>}
             </div>
         </div>
     );

@@ -12,7 +12,7 @@ const AdminNavBar = () => {
             <div className="MainButton" onClick={toggleIsOpen}/>
             {isOpen && <Fragment>
                 <a className="ChildButton" href={API_URL} target="_blank"><FontAwesomeIcon icon={faToolbox} size="xs"/></a>
-                <a className="ChildButton" href={ADMIN_URL}><FontAwesomeIcon icon={faUserCog} size="xs"/></a>
+                <a className="ChildButton" href={ADMIN_URL} target="_blank"><FontAwesomeIcon icon={faUserCog} size="xs"/></a>
                 <a className="ChildButton" href={APP_LOGOUT}><FontAwesomeIcon icon={faSignOutAlt} size="xs"/></a>
             </Fragment>}
         </Fragment>

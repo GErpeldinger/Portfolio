@@ -10,7 +10,11 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={},
+ *     collectionOperations={"GET"},
+ *     itemOperations={"GET"}
+ * )
  * @Vich\Uploadable
  * @ORM\Entity(repositoryClass=SkillRepository::class)
  */
