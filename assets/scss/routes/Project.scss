@@ -34,22 +34,23 @@
         width: 80%;
         margin: 0 auto;
 
-        h1 {
-            text-align: center;
-            text-shadow: 4px 4px 8px black;
-        }
-
         > div:first-of-type {
-            display: flex;
-            justify-content: flex-end;
+            h1 {
+                margin-top: 0;
+                text-shadow: 4px 4px 8px black;
+            }
 
-            a {
-                color: $secondary;
-                margin: 0 5px;
+            > div:first-of-type {
+                display: flex;
 
-                &:hover {
-                    color: $primary;
-                    animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                a {
+                    color: $secondary;
+                    margin: 0 5px;
+
+                    &:hover {
+                        color: $primary;
+                        animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    }
                 }
             }
         }

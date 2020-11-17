@@ -1,48 +1,29 @@
-import React, { useEffect } from 'react';
-import ReactFullPage from '@fullpage/react-fullpage';
-import Homepage from '../components/home/Homepage';
-import Introduction from '../components/home/Introduction';
-import Skills from '../components/home/Skills';
+import React from 'react';
 
 const Home = () => {
-    useEffect(() => {
-        const main = document.querySelector('main')
-        main.style.overflowY = 'unset'
-
-        return () => { main.style.overflowY = 'scroll' }
-    }, [])
-
     return (
         <div className="Home">
-            <ul id="menu">
-                <li data-menuanchor="accueil" className="active"><a href="#accueil">Accueil</a></li>
-                <li data-menuanchor="presentation"><a href="#presentation">Présentation</a></li>
-                <li data-menuanchor="competences"><a href="#competences">Compétences</a></li>
-            </ul>
-            <ReactFullPage
-                licenseKey={'YOUR_KEY_HERE'}
-                anchors={['accueil', 'presentation', 'competences']}
-                menu='#menu'
-                navigation={true}
-                navigationPosition='right'
-                loopTop={true}
-                loopBottom={true}
-                render={() => {
-                    return (
-                        <ReactFullPage.Wrapper>
-                            <div className="section">
-                                <Homepage/>
-                            </div>
-                            <div className="section">
-                                <Introduction/>
-                            </div>
-                            <div className="section">
-                                <Skills/>
-                            </div>
-                        </ReactFullPage.Wrapper>
-                    )
-                }}
-            />
+            <div>
+                <img src="/build/images/photo.jpg" alt="It's me" className="photo"/>
+                <div>
+                    <p>Bonjour, je suis</p>
+                    <p><strong>Guillaume Erpeldinger</strong></p>
+                    <p><strong>Développeur web full stack</strong></p>
+                    <p>JavaScript | Php</p>
+                </div>
+            </div>
+
+            <div>
+                <div className="jumbotron">
+                    <h2>À mon propos...</h2>
+                    <p>Après plusieurs années de travail alimentaire, j’ai pris la décision de reprendre mes études et ainsi pouvoir travailler dans un métier enrichissant et où je pourrais m’épanouir professionnellement.</p>
+                    <p>Ayant toujours était passionné d’informatique depuis mon plus jeune âge, je me suis orienté vers une formation intensive de développeur web avec comme spécialisation le langage PHP et le Framework Symfony.</p>
+                    <p>Le métier de développeur m’intéresse, car il me permet d’utiliser mon esprit logique et ma compétence à résoudre des problèmes que j’ai acquis dans l’informatique au fil des années.</p>
+                    <p>C’est ainsi que je me suis retrouvé ces derniers mois à la Wild Code School. J’ai choisi de faire ma formation là-bas, car j’adhère à ces principes qui se basent sur un apprentissage hybride où le mot-clé est « apprendre à apprendre », combiné avec beaucoup de pratique.</p>
+                </div>
+
+                <img src="/build/images/timeline.png" alt="timeline" className="timeline"/>
+            </div>
         </div>
     );
 }

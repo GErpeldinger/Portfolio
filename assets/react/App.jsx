@@ -6,6 +6,7 @@ import { ROUTES } from "./utils/constants";
 
 import NavBar from "./components/navbar/NavBar";
 import Home from "./routes/Home";
+import Skill from "./routes/Skill";
 import Projects from "./routes/Projects";
 import Project from "./routes/Project";
 
@@ -18,6 +19,7 @@ const App = () => {
                     <main>
                         <Switch>
                             <Route exact path={ROUTES.home} component={Home}/>
+                            <Route exact path={ROUTES.skill} component={Skill}/>
                             <Route exact path={ROUTES.projects} component={Projects}/>
                             <Route path={ROUTES.project} component={Project}/>
                         </Switch>

@@ -40,13 +40,11 @@ h2 {
 }
 
 .jumbotron {
-    padding: 10px 20px;
+    padding: 5px 10px;
     margin: 20px 0;
-    background-color: #c6c6c6;
-    border-radius: 15px;
-    color: $tertiary;
+    border-left: 1px solid $primary;
 
     @media screen and #{$mediumDeviceMinWidth} {
-        padding: 30px 100px;
+        padding: 10px 25px;
     }
 }

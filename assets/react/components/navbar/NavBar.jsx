@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { API_LINKS, LARGE_DEVICE_MIN_WIDTH, ROUTES } from '../../utils/constants';
 import { useGetWithAxios } from '../../utils/hooks';
-import { faEnvelope, faEye, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faEye, faHome, faTools } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import MenuLink from './MenuLink';
 import VerticalLine from './VerticalLine';
@@ -15,6 +15,7 @@ const NavBar = () => {
 
     const internalLinks = <Fragment>
         <MenuLink url={ROUTES.home} icon={faHome}>Accueil</MenuLink>
+        {/* <MenuLink url={ROUTES.skill} icon={faTools}>Compétences</MenuLink> */}
         <MenuLink url={ROUTES.projects} icon={faEye}>Projets</MenuLink>
     </Fragment>
 
