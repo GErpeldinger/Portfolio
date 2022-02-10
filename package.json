@@ -5,7 +5,7 @@
         "axios": "^0.21.1",
         "copy-webpack-plugin": "^6.2.1",
         "core-js": "^3.0.0",
-        "node-sass": "^4.14.1",
+        "node-sass": "^7.0.0",
         "prop-types": "^15.7.2",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
